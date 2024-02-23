@@ -1,0 +1,144 @@
+# vscode快捷键
+
+!+回车：快速生成.html
+快速复制一行代码：CTRL+SHIFT+UP/DOWN
+
+# vscode插件
+扩展搜索open in browser\chinese
+
+# html5的doctyoe声明
+<!DOCTYPE html>
+避免浏览器差异
+
+#标签含义
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>贾兰兰是一只大蠢蛋</h1>
+</body>
+</html>
+
+<html>定义了html文档，限定了内容的开始和结束，其他元素包含在内
+<head>定义文档头部，不会作为内容给浏览者，描述了一些属性和文件关系
+<body>文档的主体，浏览者观看的内容
+<title>文档标题，显示在浏览器窗口的状态栏上，有利于浏览者的体验
+<meta>描述网页文档的属性
+标签分双标签和单标签，单标签不用闭合就能发挥作用
+
+# <h>标题介绍
+标题由h1-h6定义，快捷键h$*6
+标签位置摆放，在<>中田间属性aligen='left|center|right'，默认居左
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+</body>
+</html>
+
+# <p>段落介绍
+段落主体内容的写作
+<br>用于换行
+<br/>结束分行，如加
+
+<body>
+    <p>这是<br>一个段落</p>
+</body>
+
+# <hr/>水平线介绍
+单标签
+<body>
+    <hr color="red" width="10px" size="100px" align=""/>
+</body>
+color:颜色
+width：长度
+size：高度
+align：对齐方式
+
+# <img>图像介绍
+单标签
+<body>
+    <img src="" alt="" title="" width="" height="">
+</body>
+src：路径
+alt：当图片不能正确显示替换文本显示
+width：宽度
+height：高度
+title：鼠标悬停的指示
+
+#文件路径介绍
+绝对路径
+    文件访问的具体地址E:\wangfan471.github.io\学习日记\1
+
+相对路径
+    对于html文件而言的关系地址./test.html
+    子级关系/
+    父级关系../
+    同级关系./
+
+网络路径
+    网络地址https://github.com/wangfan471/wangfan471.github.io
+
+#<a>超文本链接介绍
+
+<body>
+    <a href="https://github.com/wangfan471/wangfan471.github.io">我的博客</a>
+</body>
+href可以是网络地址也可以是文件路径
+默认情况下有以下三种行为
+    未访问过的链接显示蓝色字体带有下划线
+    访问过的显示紫色带有下划线
+    点击链接显示红色带有下划线
+可以由css改变
+
+#常用文本标签介绍
+<em>着重文字
+<b>粗体文字
+<i>斜体字
+<strong>加重语气
+<del>删除字划线
+<span>没有特定的含义
+
+
+#<ol>有序列表介绍
+
+<body>
+    <ol type="I">
+        <li>苹果</li>
+        <li>橘子</li>
+    </ol>
+</body>
+
+有序列表是一列文本，使用数字标记，<ol>有序列表开始，<li>列表内容开始
+type属性1、a、A、i、I
+
+<body>
+    <ol type="I">
+        <li>水果</li>
+            <ol>
+                <li>苹果</li>
+                <li>橘子</li>
+            </ol>
+        <li>蔬菜</li>
+    </ol>
+</body>
+
+有序列表嵌套
+
+###############################################################################
