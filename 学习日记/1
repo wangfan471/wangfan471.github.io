@@ -141,6 +141,112 @@ type属性1、a、A、i、I
 
 有序列表嵌套
 
+#<ul>无序列表介绍
+
+<body>
+    <ul>
+        <li>水果</li>
+        <li>蔬菜</li>
+    </ul>
+</body>
+
+无序列表是一列文本，使用圆点标记，<ul>无序列表开始，<li>列表内容开始
+type属性
+    disc实心圆
+    circle空心圆
+    square小方块
+    none不显示
+
+<body>
+    <ul>
+        <li>水果</li>
+            <ul>
+                <li>苹果</li>
+                <li>香蕉</li>
+            </ul>
+        <li>蔬菜</li>
+    </ul>
+</body>
+无序列表嵌套
+快捷键生成ul>li*3
+
+#<table>表格介绍
+
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+</body>
+
+表格<table>
+行<tr>
+单元格列<td>
+
+快捷键table>tr*4>td*3
+
+表格属性
+    border边框
+    width宽度
+    height高度
+
+#单元格合并
+水平合并：colspan 保留左边删除右边
+垂直合并：rowspan 保留上边删除下边
+
+<body>
+    <table border="1" width="600px" height="400px">
+        <tr>
+            <td>table1</td>
+            <td colspan="2">table2table3</td>
+            
+        </tr>
+        <tr>
+            <td>table4</td>
+            <td rowspan="2">table5table8</td>
+            <td>table6</td>
+        </tr>
+        <tr>
+            <td>table7</td>
+            <!-- <td rowspan="2">table8</td> -->
+            <td>table9</td>
+        </tr>
+        <tr>
+            <td>table10</td>
+            <td>table11</td>
+            <td>table12</td>
+        </tr>
+    </table>
+</body>
+
+#form表单
+用户交互界面，填写用户名密码信息的界面
+
+<body>
+    <form action="url" method="get" name="myform"></form>
+</body>
+
+属性说明
+action：服务器地址
+name：表单名称
+method：get用于提交少量数据，url可以看到|post提交大量数据，url可以看到
+
+表单元素：表单标签、表单域、表单按钮
+
+<body>
+    <form action="url" method="get" name="myform">
+        <input type="text">
+        <input type="submit">
+        <button>按钮</button>
+    </form>
+</body>
+
 #块元素和内联元素
 块级元素
 块元素会在页面中独占一行(自上向下垂直排列)
