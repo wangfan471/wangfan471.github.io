@@ -185,11 +185,11 @@ type属性
     </table>
 </body>
 
-表格<table>
+#表格<table>
 行<tr>
 单元格列<td>
 
-快捷键table>tr*4>td*3
+快捷键table>tr*4>td*3{内容}
 
 表格属性
     border边框

@@ -227,4 +227,39 @@ p{
 温馨提示
 负值是允许的。如果值是负数，将第一行左缩进
 
-#######
+#表格属性
+使用CSS可以使 HTML表格更美观
+
+表格边框
+指定CSS表格边框，使用border属性
+table, td {
+border: 1px solid black;
+}
+
+折叠边框
+border-collapse 属性设置表格的边框是否被折叠成一个单一的边框或隔开
+table { border-collapse:collapse;}
+table,td { border: 1px solid black; }
+
+表格宽度和高度
+width和height属性定义表格的宽度和高度
+table { width:100%; }
+td { height:50px; }
+
+表格文字对齐
+表格中的文本对齐和垂直对齐属性
+text-align属性设置水平对齐方式，向左，右，或中心
+td { text-align:right; }
+垂直对齐属性设置垂直对齐
+td { height:50px; vertical-align:bottom; }
+
+表格填充
+如果在表的内容中控制空格之间的边框，应使用td和th元素的填充属性
+td { padding:15px; }
+
+表格颜色
+下面的例子指定边框的颜色，和th元素的文本和背景颜色
+table, td, th { border:lpx solid green; }
+td { background-color:green; color:white; }
+
+######
