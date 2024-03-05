@@ -1,8 +1,62 @@
+#CSS介绍
+CSS概念
+CSS(Cascading Style Sheets)层叠样式表，又叫级联样式表，简称样式表
+CSS文件后缀名为.css
+CSS用于HTML文档中元素样式的定义
+
+为什么需要CSS
+使用css的目的就是让网页具有美观一致的页面
+
+语法
+CSS 规则由两个主要的部分构成:选择器，以及一条或多条声明
+h1 {
+    color:blue; 
+    font-size:12px;
+}
+
+选择器通常是您需要改变样式的 HTML 元素
+每条声明由一个属性和一个值组成
+属性(property)是您希望设置的样式属性(style attribute)。
+每个属性有一个值。属性和值被冒号分开
+
+<style>
+    h1{
+        color: blue;
+        font-size: 12px;
+    }
+</style>
+
+#CSS引入方式
+内联样式(行内样式)
+要使用内联样式，你需要在相关的标签内使用样式(style)
+居性Style 属性可以包含任何 CSS 属性
+温馨提示
+缺乏整体性和规划性，不利于维护，维护成本高
+<p style="background:orange;font-size: 24px;">css<p>
+
+内部样式
+当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用<ye>标签在文档头部定义内部样式表
+温馨提示
+单个页面内的CSS代码具有统一性和规划性，便于维护，但是在多个页面之间容易混乱
+<head>
+    <style>
+        hl {
+            background: red;
+        }
+    </style>
+</head>
+
+外部样式(推荐)
+当样式需要应用于很多页面时，外部样式表将是理想的选择。在使用外部样式表的情况下，你可以通过改变个文件来改变整个站点的外观。每个页面使用 <mnk>标签链接到样式表。 <ink>标签在(文档的)头部
+<head>
+    <link rel="stylesheet" type="text/css" href="xxx.css">
+<head>
+
 #全局选择器
 可以与任何元素匹配，优先级最低，一般做样式初始化
 *{
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
 }
 #元素选择器
 HTML文档中的元素，p、b、div、a、img、body 等
@@ -10,7 +64,7 @@ HTML文档中的元素，p、b、div、a、img、body 等
 无法描述某一个元素的“个性!
 
 p{
-font-size:14px;
+    font-size:14px;
 }
 再比如说，我想让“学完前端，继续学java” 这句话中的“前端”两个变为红色字体，
 那么我可以用<pan>标签把“前端”这两个字围起来，然后给span>标签加一个标签选择器
@@ -32,7 +86,7 @@ color: red;
 <h2 class="oneclass">你好</h2>
 *定义类选择器*/
 .oneclass{
-width:800px;
+    width:800px;
 }
 
 class属性的特点
@@ -334,4 +388,20 @@ h1~p{
     color:red;
 }
 
-#####
+#盒子模型
+概念
+所有HTML元素可以看作盒子，在CSS中，“box model”这一术语是用来设计和布局时使用
+CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括:
+外边距(margin)，边框(border)，内边距(padding)，和实际内容(content)
+
+Margin(外边距)-清除边框外的区域，外边距是透明的
+Border(边框)-围绕在内边距和内容外的边框
+Padding(内边距)-清除内容周围的区域，内边距是透明的
+Content(内容)-盒子的内容，显示文本和图像
+
+如果把盒子模型看作是一个生活中的快递，那么内容部分等同于你买的实物，内边距
+等同于快递盒子中的泡沫，边框等同于快递盒子，外边距等同于两个快递盒子之间的距离
+
+
+
+##################################
