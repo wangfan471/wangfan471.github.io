@@ -692,12 +692,13 @@ margin: 5px;
 伪对象方式
     如果有父级塌陷，并且同级元素也收到了影响，还可以使用伪对象方式处理
     为父标签添加伪类 after,设置空的内容，并且使用 clear:both;
-    这种情况下，父布局不能设置高度
+    这种情况下，父级不能设置高度
 <div class="container">
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
 </div>
+<div class="nav"></div>
 
 .container {
     width:350px;
