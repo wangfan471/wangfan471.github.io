@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 副作用父元素高度塌陷 */
+        /* .container{
+            border: 1px solid red;
+        }
+
+        .box{
+            width:100px;
+            height: 100px;
+            background-color:#fff176;
+            float: left;
+            margin:50px
+        }     */
+        /* 副作用父元素高度塌陷 */
+
+        /* 后续元素受影响 */
+        /* .box{
+            width: 100px;
+            height: 100px;
+            background-color:#fff176;
+            float: left;
+            margin: 5px;
+        }
+
+        .nav{
+            width: 100px;
+            height: 100px;
+            background-color:red;
+        } */
+        /* 后续元素受影响 */
+        
+        /* 父元素设置高度 */
+        /* .container{
+            height: 300px;
+            width: 350px;
+            border: lpx solid red;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color:#fff176;
+            float: left;
+            margin: 5px; 
+        }
+        .nav{
+            width: 100px;
+            height: 100px;
+            background-color:red;
+        } */
+        /* 父元素设置高度 */
+
+        /* clear清楚浮动 */
+        /* .container{
+            width: 350px;
+            border: lpx solid red;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color:#fff176;
+            float: left;
+            margin: 5px; 
+        }
+        .nav{
+            width: 100px;
+            height: 100px;
+            background-color:red;
+            clear: both;
+        } */
+        /* clear清楚浮动 */
+        
+</style>
+</head>
+<body>
+    <!-- 副作用父元素高度塌陷 -->
+    <!-- <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>     -->
+    <!-- 副作用父元素高度塌陷 -->
+
+    <!-- 后续元素受影响 -->
+    <!-- <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="nav"></div> -->
+    <!-- 后续元素受影响 -->
+
+    <!-- 父元素设置高度 -->
+    <!-- <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="nav"></div> -->
+    <!-- 父元素设置高度 -->
+
+    <!-- clear清楚浮动 -->
+    <!-- <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="nav"></div> -->
+    <!-- clear清楚浮动 -->
+
+</body>
+</html>
