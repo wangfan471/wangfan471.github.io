@@ -722,6 +722,257 @@ margin: 5px;
     background-color: red;
 }
 
-#
+#定位
+定义
+    position 属性指定了元素的定位类型
+值;描述
+relative;相对定位
+absolute;绝对定位
+fixed;固定定位
 
-#############################
+
+其中，绝对定位和固定定位会脱离文档流
+设置定位之后:可以使用四个方向值进行调整位置:left、top、right、bottom
+
+相对定位
+    <div class="box"></div>
+    .box{
+        width: 200px;
+        height:200px;
+        background-color: red;
+        position:relative;
+        left: 100px;
+    }
+
+绝对定位
+<div class="boxl"></div>
+<div class="box2"></div>
+.box1{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position:absolute;
+    left: 50px;
+}
+
+.box2{
+    width: 300px;
+    height: 300px;
+    background-color:green;
+}
+
+固定定位
+<div class="box1"></div>
+<div class="box2"></div>
+
+.box1{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position:fixed;
+    left: 50px;
+}
+.box2{
+    width: 300px;
+    height: 300px;
+    background-color: green;
+}
+
+温馨提示
+设置定位之后，相对定位和绝对定位他是相对于具有定位的父级元素进行位置调整如果父级元素不存在定位，则继续向上逐级寻找，直到顶层文档
+<div class="container">
+    <div class="box"></div>
+</div>
+
+.container{
+    width: 300px;
+    height: 300px;
+    background-color:#666;
+    position:relative;
+    left:200px;
+}
+
+.box{
+    width:200px;
+    height:200px;
+    background-color:red;
+    position:absolute;
+}
+
+Z-index
+z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面
+<div class="boxl"></div>
+<div class="box2"></div>
+.box1{
+    width:200px;
+    height:200px;
+    background-color:red;
+    position:absolute;
+    Z-index:2;
+}
+
+.box2{
+    width: 300px;
+    height:300px;
+    background-color: green;
+    position:absolute;
+    z-index:1;
+}
+
+#CSS新特性
+圆角
+    使用 CSS3|border-radius 属性，你可以给任何元素制作“圆角’
+border-radius 属性，可以使用以下规则:
+四个值: 第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角
+三个值: 第一个值为左上角,第二个值为右上角和左下角，第三个值为右下角目 
+两个值: 第一个值为左上角与右下角，第二个值为右上角与左下角
+一个值: 四个圆角值相同
+
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+div{
+    margin:10px;
+}
+
+.box1 {
+    border-radius:15px 50px 30px 5px;
+    background: #8AC007;
+    padding: 20px;
+    width:200px;
+    height: 150px;
+    }
+.box2 {
+    border-radius:15px 50px 30px;
+    background: #8AC007;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+.box3 {
+    border-radius:15px 50px;
+    background:#8AC007;
+    padding: 20px;
+    width:200px;
+    height: 150px;
+}
+
+阴影
+    box-shadow 向框添加一个或多个阴影。
+box-shadow:h-shadow v-shadow blur color;
+值;描述
+h-shadow;必选，水平阴影的位置(可以是负数，另一个方向)
+w-shadow;必选，垂直阴影的位置
+blur;可选，模糊距离
+color;可选，阴影的颜色
+
+.box {
+    width:200px;
+    height: 200px;
+    background-color:#8ac007;
+    margin:50px;
+    box-shadow:10px 10px 5px green;
+}
+
+#动画
+动画是使元素从一种样式逐渐变化为另一种样式的效果
+您可以改变任意多的样式任意多的次数
+请用百分比来规定变化发生的时间，或用关键词"from"和"to"，等同于 0% 和 100%
+0% 是动画的开始，100% 是动画的完成。
+@keyframes创建动画
+使用 @keyframes 规则，你可以创建动画
+@keyframes name {
+    froml0%{
+        css样式
+    }
+    percent{
+        css样式
+    }
+    to|100%{
+        css样式
+    }
+}
+name:动画名称，开发人员自己命名;
+percent:为百分比值，可以添加多个百分比值;
+
+animation执行动画
+animation: name duration timing-function delay iteration-count direction;
+值;描述
+name;设置动画的名称
+duration;设置动画的持续时间
+timing-function;设置动画效果的速率(如下)
+delay;设置动画的开始时间(延时执行)
+iteration-count;设置动画循环的次数，infinite为无限次数的循环
+direction;设置动画播放的方向(如下)
+animation-play-state;控制动画的播放状态:running代表播放，而paused代表停止播放
+
+描述;值
+ease;逐渐变慢(默认)
+linear;匀速
+ease-in;加速
+ease-out;减速
+ease-in-out;先加速后减速
+
+direction值;描述
+normal;默认值为normal表示向前播放
+atternate;动画播放在第偶数次向前播放，第奇数次向反方向播放
+
+切换背景颜色
+<div class="animation"></div>
+.animation {
+    width: 300px;
+    height: 300px;
+    background-color:red;
+    animation:anima 5s inear 5s infinite;
+}
+
+.animation:hover {
+    animation-play-state:paused;
+}
+@keyframes anima {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: green;
+    }
+    100% {
+        background-color:blueviolet;
+    }
+}
+
+呼吸效果
+<div class="box"></div>
+.box {
+    width:500px;
+    height:400px;
+    margin:40px auto;
+    background-color:#2b92d4;
+    border-radius:5px;
+    box-shadow:01px2pxrgba(0,0,0,.3);
+    /* animation-timing-function:ease-in-out;
+    animation-name:breathe;
+    animation-duration:2700ms;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;*/
+    animation: breathe 2700ms ease-in-out infinite alternate;
+}
+@keyframes breathe {
+    0% {
+        opacity:.2;
+        box-shadow:0 1px 2px rgba(255,255,255,0.1)
+    }
+    50% {
+        opacity:.5;
+        box-shadow:0 1px 2px rgba(18,190,84,0.76)
+    }
+    100% {
+        opacity: 1;
+        box-shadow:0 1px 30px rgba(59,255,255,1)
+    }
+}
+
+
+
+
+###########################
