@@ -906,7 +906,7 @@ iteration-count;设置动画循环的次数，infinite为无限次数的循环
 direction;设置动画播放的方向(如下)
 animation-play-state;控制动画的播放状态:running代表播放，而paused代表停止播放
 
-描述;值
+timing-function描述;值
 ease;逐渐变慢(默认)
 linear;匀速
 ease-in;加速
@@ -926,7 +926,7 @@ atternate;动画播放在第偶数次向前播放，第奇数次向反方向播�
     animation:anima 5s inear 5s infinite;
 }
 
-.animation:hover {
+.animation:hover/* 鼠标悬停   */ {
     animation-play-state:paused;
 }
 @keyframes anima {
@@ -949,7 +949,7 @@ atternate;动画播放在第偶数次向前播放，第奇数次向反方向播�
     margin:40px auto;
     background-color:#2b92d4;
     border-radius:5px;
-    box-shadow:01px2pxrgba(0,0,0,.3);
+    box-shadow:0 1px 2px rgba(0,0,0,.3);
     /* animation-timing-function:ease-in-out;
     animation-name:breathe;
     animation-duration:2700ms;
@@ -959,8 +959,8 @@ atternate;动画播放在第偶数次向前播放，第奇数次向反方向播�
 }
 @keyframes breathe {
     0% {
-        opacity:.2;
-        box-shadow:0 1px 2px rgba(255,255,255,0.1)
+        opacity/* 盒子透明度 */:.2;
+        box-shadow:0 1px 2px rgba(255,255,255,0.1/* 阴影透明度 */)
     }
     50% {
         opacity:.5;
