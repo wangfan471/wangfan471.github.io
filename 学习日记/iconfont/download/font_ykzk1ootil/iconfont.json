@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "39489018",
+      "name": "Instagram",
+      "font_class": "Instagram",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    }
+  ]
+}

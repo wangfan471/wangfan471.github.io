@@ -972,7 +972,90 @@ atternate;动画播放在第偶数次向前播放，第奇数次向反方向播�
     }
 }
 
+#媒体查询
+    媒体查询能使页面在不同在终端设备下达到不同的效果
+    媒体查询会根据设备的大小自动识别加载不同的样式
 
+设置meta标签
+    使用设备的宽度作为视图宽度并禁止初始的缩放。在<head>标签里加入这个meta标签。
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-
+    scale=l,user-scalable=no">
 
+参数解释
+    width =device-width 宽度等于当前设备的宽度
+    initial-scale 初始的缩放比例(默认设置为1.0)
+    maximum-scale 允许用户缩放到的最大比例(默认设置为1.0)
+    user-scalable 用户是否可以手动缩放(默认设置为no)
 
-###########################
+媒体查询语法
+    @media screen and (max-width:768px){
+        /*设备小于768px加载样式 */
+        body{
+            background-color: red;
+        }
+    }
+    @media screen and (max-width:992px)and(min-width:768px){
+        /*设备小于768px但小于992px加载样式 */
+        body{
+            background-color: pink;
+        }
+    }
+    @media screen and (min-width:992px){
+        /*设备大于992px加载样式*/
+        body{
+            background-color: green;
+        }
+    }
+
+display
+    none:内容不显示
+    block:内容显示
+
+#CSS_雪碧图
+    CSS Sprite也叫CSS精灵图、CSS雪碧图，是一种网页图片应用处理方式。
+    它允许你将一个页面涉及到的所有零星图片都包含到一张大图中去
+
+优点
+    减少图片的字节
+    减少网页的http请求，从而大大的提高页面的性能
+
+原理
+    通过background-image引入背景图片
+    通过background-position把背景图片移动到自己需要的位置
+
+实例
+<i class="icon1"></i>
+<i class="icon2"></i>
+
+.icon1 {
+    display: block;
+    background-image: url(1.png);
+    background-position:-20px 0;
+    width: 45px;
+    height: 70px;
+}
+.icon2 {
+    display: block;
+    background-image: url(1.png);
+    background-position:-93px -84px;
+    width: 45px;
+    height: 70px;
+}
+
+#字体图标
+我们会经常用到一些图标。但是我们在使用这些图标时，往往会遇到失真的情况，而且图片数量很多的话，页面加载就越慢。所以，我们可以使用字体图标的方式来显示图标，既解决了失真的问题，也解决了图片占用资源的问题
+常用字体图标库:https://www.iconfont.cn
+
+优点
+    轻量性:加载速度快，减少http请求
+    灵活性:可以利用CSS设置大小颜色等
+    兼容性:网页字体支持所有现代浏览器，包括IE低版本
+
+使用字体图标
+    注册账号并登录
+    选取图标或搜索图标
+    添加购物车
+    下载代码
+    选择 font-class 引用
+
+########################

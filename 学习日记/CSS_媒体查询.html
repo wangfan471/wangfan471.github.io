@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-
+    scale=l,user-scalable=no">    
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 500px;
+            height: 500px;
+        }
+
+
+        
+        @media screen and (max-width:768px){
+            /*设备小于768px加载样式 */
+            .box1{
+                background-color: red;
+            }
+            .p1{
+                display: block;
+            }
+            .p2{
+                display: none;
+            }
+            .p3{
+                display: none;
+            }
+        }
+        @media screen and (max-width:992px) and (min-width:768px){
+            /*设备小于768px但小于992px加载样式 */
+            .box1{
+                background-color: pink;
+            }
+            .p1{
+                display: none;
+            }
+            .p2{
+                display: block;
+            }    
+            .p3{
+                display: none;
+            }        
+        }
+        @media screen and (min-width:992px){
+            /*设备大于992px加载样式*/
+            .box1{
+                background-color: green;
+            }
+            .p1{
+                display: none;
+            }
+            .p2{
+                display: none;
+            }          
+            .p3{
+                display: block; 
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <p class="p1">红</p>
+    <p class="p2">粉</p>
+    <p class="p3">绿</p>
+</body>
+</html>
