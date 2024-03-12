@@ -3,6 +3,8 @@
 !+回车：快速生成.html
 快速复制一行代码：CTRL+SHIFT+UP/DOWN
 ctrl+{|}：文本向左|向右平移
+行注释ctrl+/
+多行注释ctrl+shift+/
 
 # vscode插件
 扩展搜索open in browser\chinese
