@@ -294,6 +294,7 @@ if(eat){
         console.log("双椒鱼头");
     }else{
         console.log("猪肉炖粉条");
+    }
 }else {
     console.log('不吃了');
 }
@@ -344,9 +345,7 @@ if(num % 2 === 0){
     console.log("奇数");
 }
 
-// 三日运算符
 num % 2 === 0 ? console.log("偶数") : console.log("奇数");
-//
 var result = num % 2 === 0 ? "偶数" : "奇数";
 console.log(result)
 
@@ -439,4 +438,63 @@ for(var i=0 ; i<5 ; i++){
     console.log(i);
 }
 
-###################################################
+#字符串
+字符串就是零个或多个排在一起的字符，放在单引号或双引号之中
+"itbaizhan"
+'itbaizhan'
+
+单引号字符串的内部，可以使用双引号。双引号字符串的内部，可以使用单引号
+'key ="value'
+"It's a long itbaizhan"
+
+如果要在单引号字符串的内部，使用单引号，就必须在内部的单引号前面加上反斜杠，用来转义。双引号字符串内部使用双引号，也是如此
+'Did she say \'Hello\'?'
+//"Did she say 'He11o'?"
+
+"Did she say \"Hello\"?"
+// "Did she say "Hello"?"
+
+温馨提示
+    字符串默认只能写在一行内，分成多行将会报错
+
+如果长字符串必须分成多行，可以在每一行的尾部使用反斜杠
+var longstring = 'Long \
+1ong \
+string' ;
+longstring
+// "Long long long string"
+
+length 属性
+    length属性返回字符串的长度，该属性也是无法改变的
+var s='itbaizhan';
+s.length // 9
+
+#字符串方法_charAt()
+charAt 方法返回指定位置的字符，参数是从0开始编号的
+var s= new string('itbaizhan');
+s.charAt(1)//"t"
+
+如果参数为负数，或大于等于字符串的长度charAt 返回空字符串
+'itbaizhan'.charAt(-1)//""
+'itbaizhan'.charAt(9)//""
+
+#字符串方法_concat()
+concat 方法用于连接两个字符串,返回一个新字符串.不改变原字符串
+var sl = 'itbaizhan';
+var s2 = 'sxt';
+
+s1.concat(s2) // "itbaizhansxt"
+s1 // "itbaizhan"
+
+该方法可以接受多个参数
+'sxt'.concat('itbaizhan','bjsxt')//'sxtitbaizhanbjsxt'
+
+如果参数不是字符串，concat 方法会将其先转为字符串，然后再连接
+var one = 1;
+var two = 2;
+var three ='3'
+''.concat(one,two,three)//"123'
+
+
+
+################################################

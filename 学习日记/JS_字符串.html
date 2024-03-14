@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str1 = 'key ="value'
+        var str2 = "It's a long itbaizhan"
+
+        // 如果要在单引号字符串的内部，使用单引号，就必须在内部的单引号前面加上反斜杠，用来转义。
+        // 双引号字符串内部使用双引号，也是如此
+        var str3 = 'Did she say \'Hello\'?'
+        var str4 = "Did she say \"Hello\"?"
+
+        // 如果长字符串必须分成多行，可以在每一行的尾部使用反斜杠
+        var str5 = 'Long \
+        1ong \
+        string' ;
+
+        console.log(str1);
+        console.log(str2);
+        console.log(str3);
+        console.log(str4);
+        console.log(str5);
+        document.write(str5)
+        console.log(str1.length);
+    </script>
+</body>
+</html>
