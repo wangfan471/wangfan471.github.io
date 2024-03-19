@@ -7,8 +7,10 @@ ctrl+{|}：文本向左|向右平移
 多行注释ctrl+shift+/
 
 # vscode插件
-扩展搜索open in browser\chinese
-
+扩展搜索
+    open in browser\chinese
+    gitlens
+    git history
 # html5的doctyoe声明
 <!DOCTYPE html>
 避免浏览器差异

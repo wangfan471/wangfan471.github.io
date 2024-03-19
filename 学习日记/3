@@ -1,6 +1,6 @@
 #JavaScript
 JavaScript介绍
-    JavaScript 是一种轻量级的脚本语言。所谓“脚本语言”，指的是它不具备开发操作系统的能力，
+    JavaScript 是一种轻量级的脚本语言。所谓“脚本语言”,指的是它不具备开发操作系统的能力,
     而是只用来编写控制其他大型应用程序的“脚本”
     JavaScript 是一种嵌入式(embedded)语言。它本身提供的核心语法不算很多
 
@@ -10,20 +10,20 @@ JavaScript介绍
     易学性
 
 JavaScript与ECMAScript的关系
-    ECMAScript和JavaScript的关系是，前者是后者的规格，后者是前者的一种实现。在日常场合，这两个词是可以互换的。
+    ECMAScript和JavaScript的关系是,前者是后者的规格,后者是前者的一种实现。在日常场合,这两个词是可以互换的。
 
 #语句、标识符
 语句
-    JavaScript 程序的单位是行(line)，也就是一行一行地执行。一般情况下，每一行就是一个语句
+    JavaScript 程序的单位是行(line),也就是一行一行地执行。一般情况下,每一行就是一个语句
     var num = 10;
-    语句以分号结尾，一个分号就表示一个语句结束
+    语句以分号结尾,一个分号就表示一个语句结束
 
 标识符
     标识符(identifier)指的是用来识别各种值的合法名称。最常见的标识符就是变量名
-    标识符是由:字母、美元符号($)、下划线()和数字组成，其中数字不能开头
+    标识符是由:字母、美元符号($)、下划线()和数字组成,其中数字不能开头
 
 温馨提示
-    中文是合法的标识符，可以用作变量名(不推荐)
+    中文是合法的标识符,可以用作变量名(不推荐)
 
 #变量
 变量的重新赋值
@@ -31,13 +31,13 @@ JavaScript与ECMAScript的关系
     2num = 20;
 
 变量提升
-    JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。
-    这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升(hoisting)。
+    JavaScript 引擎的工作方式是,先解析代码,获取所有被声明的变量,然后再一行一行地运行。
+    这造成的结果,就是所有的变量的声明语句,都会被提升到代码的头部,这就叫做变量提升(hoisting)。
     console.1og(num);
     var num = 10;//结果是什么呢?
 
 console.log()
-    打印，可以在浏览器控制台看到结果
+    打印,可以在浏览器控制台看到结果
 
 
 #JavaScript引入到文件
@@ -55,7 +55,7 @@ JavaScript常用引入方式
 
 引入本地独立JS文件
     <body>
-        <script type="text/javascript" src="./itbaizhan.js"> </script>
+        <script type="text/javascript" src="./fan.js"> </script>
     </body>
 
 引入网络来源文件
@@ -74,8 +74,8 @@ JavaScript常用引入方式
         控制台输出
 
 JavaScript注释
-    源码中注释是不被引擎所解释的，它的作用是对代码进行解释。
-    Javascript 提供两种注释的写法:一种是单行注释，用//起头;另一种是多行注释，放在/和/之间。
+    源码中注释是不被引擎所解释的,它的作用是对代码进行解释。
+    Javascript 提供两种注释的写法:一种是单行注释,用//起头;另一种是多行注释,放在/和/之间。
 //这是单行注释
 
 /*
@@ -88,7 +88,7 @@ JavaScript注释
 <!-- 注释 -->
 
 JavaScript输出方式
-    JavaScript有很多种输出方式，都可以让我们更直观的看到程序运行的结果
+    JavaScript有很多种输出方式,都可以让我们更直观的看到程序运行的结果
 // 在浏览器中弹出一个对话框,然后把要输出的内容展示出来,alert都是把要输出的内容首先转换为 
 字符串然后在输出的
 alert("要输出的内容");
@@ -100,26 +100,26 @@ console.1og("要输出的内容");
 
 #数据类型
 数据类型分类
-    JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种。(ES6 又新增了第七种 Symbol 类型的值和第八种 BigInt类型)
+    JavaScript 语言的每一个值,都属于某一种数据类型。JavaScript 的数据类型,共有六种。(ES6 又新增了第七种 Symbol 类型的值和第八种 BigInt类型)
     数值、布尔值、nul、字符串、undefined、对象
 
 数据类型分类
 原始类型(基础类型)
     数值、布尔值、字符串
     var age = 20;
-    var name = “尚学堂”;
+    var name = “wang”;
     var learn = true;
 
 合成类型(复合类型)
-    (object)对象:因为一个对象往往是多个原始类型的值的合成，可以看作是一个存放各种值的容器
+    (object)对象:因为一个对象往往是多个原始类型的值的合成,可以看作是一个存放各种值的容器
 var user= {
-    name:"尚学堂",
+    name:"wang",
     age:20,
     learn:true
 }
 
 温馨提示
-    至于undefined和null，一般将它们看成两个特殊值。
+    至于undefined和null,一般将它们看成两个特殊值。
 
 #typeof运算符
 数值-number
@@ -127,7 +127,7 @@ var user= {
 布尔值-boolean
 对象-object
 
-lavaScript 有三种方法，可以确定一个值到底是什么类型。而我们现在需要接触到的就是typeof
+lavaScript 有三种方法,可以确定一个值到底是什么类型。而我们现在需要接触到的就是typeof
 
 数值返回number
     typeof 123 //"number"
@@ -142,8 +142,8 @@ lavaScript 有三种方法，可以确定一个值到底是什么类型。而我
     typeof {} // "object"
 
 unll和undefined的区别
-null与undefined都可以表示“没有”，含义非常相似。将一个变量赋值为undefined或null，老实说，语法效果几乎没区别。
-既然含义与用法都差不多，为什么要同时设置两个这样的值，这不是无端增加复杂度，令初学者困扰吗?这与历史原因有关
+null与undefined都可以表示“没有”,含义非常相似。将一个变量赋值为undefined或null,老实说,语法效果几乎没区别。
+既然含义与用法都差不多,为什么要同时设置两个这样的值,这不是无端增加复杂度,令初学者困扰吗?这与历史原因有关
 
 #运算符之算数运算符
 算数运算符
@@ -164,11 +164,11 @@ console.log(num1 / num2)
 // 取余
 console.log(num1 % num2)
 
-// 自加自减，每次数值+1或-1
+// 自加自减,每次数值+1或-1
 console.log(++ num1)
 console.log(-- num1)
 
-// ++放在后面和放在前面的区别，放在前面是先自加在打印，放在后面是先打印再自加
+// ++放在后面和放在前面的区别,放在前面是先自加在打印,放在后面是先打印再自加
 console.log(num2 ++);
 console.log(num2);
 
@@ -187,7 +187,7 @@ console.log(num3++ + --num4);//4
 %=;x%=y等同于x=x%y
 
 赋值运算符(Assignment Operators)用于给变量赋值
-最常见的赋值运算符，当然就是等号(=)
+最常见的赋值运算符,当然就是等号(=)
 
 // 将 1 赋值给变量 x
 var x= 1;
@@ -207,7 +207,7 @@ var x = y
 !=;不相等运算符
 !==;严格不相等运算符(数值和类型)
 
-比较运算符用于比较两个值的大小，然后返回一个布尔值，表示是否满足指定的条件
+比较运算符用于比较两个值的大小,然后返回一个布尔值,表示是否满足指定的条件
 2 > 1 // true
 
 #运算符之布尔运算符
@@ -222,7 +222,7 @@ var x = y
 !false // true
 
 非布尔值取反
-    对于非布尔值，取反运算符会将其转为布尔值。可以这样记忆，以下六个值取反后为true，其他值都为false
+    对于非布尔值,取反运算符会将其转为布尔值。可以这样记忆,以下六个值取反后为true,其他值都为false
 
 温馨提示
     undefined
@@ -234,30 +234,30 @@ var x = y
 
 且运算符(&&)
     多个条件都要满足
-如果一个人一直做好事，突然有一天做了一件坏事，那么人们会认为这个人很虚伪，以前说不定都是装的!对这个人不在认可
+如果一个人一直做好事,突然有一天做了一件坏事,那么人们会认为这个人很虚伪,以前说不定都是装的!对这个人不在认可
 console.log(10 < 20 && 10 > 5);// true
 
 或运算符(||)
     满足一个条件即可
-如果一个人一直做坏事，突然有一天做了一件好事，那么人们会认为这个人其实还不错，以前也许是另有原因!对这个人突然就认可了
+如果一个人一直做坏事,突然有一天做了一件好事,那么人们会认为这个人其实还不错,以前也许是另有原因!对这个人突然就认可了
 console.10g(10 < 20 || 10 < 5);// true    
 
 #条件语句之if语句
-if结构先判断一个表达式的布尔值，然后根据布尔值的真伪，执行不同的语句。
+if结构先判断一个表达式的布尔值,然后根据布尔值的真伪,执行不同的语句。
 
 if语句语法规范
 if (布尔值){
     语句;
 }
 
-需要注意的是，“布尔值“往往由一个条件表达式产生的，必须放在圆括号中
+需要注意的是,“布尔值“往往由一个条件表达式产生的,必须放在圆括号中
 var m= 3;
 if(m === 3){
     m++;
 }
 console.log(m);//4
 
-注意，if后面的表达式之中，不要混淆赋值表达式(=)、严格相等运算符(===)和相等运算符(==)。
+注意,if后面的表达式之中,不要混淆赋值表达式(=)、严格相等运算符(===)和相等运算符(==)。
 尤其是赋值表达式不具有比较作用。
 var x= 1;
 var y=2;
@@ -267,15 +267,15 @@ if(2= y) {
 
 #条件语句之if...else
 if...else基本结构
-    if代码块后面，还可以跟一个else代码块，表示不满足条件时，所要执行的代码。
+    if代码块后面,还可以跟一个else代码块,表示不满足条件时,所要执行的代码。
 if(m === 3){
-    //满足条件时，执行的语句
+    //满足条件时,执行的语句
 } else {
-    //不满足条件时，执行的语句
+    //不满足条件时,执行的语句
 }
 
 多个if...else连接
-对同一个变量进行多次判断时，多个if...else语句可以连写在一起。
+对同一个变量进行多次判断时,多个if...else语句可以连写在一起。
 if(m ===0){
     //...
 }else if(m===1){
@@ -302,7 +302,7 @@ if(eat){
 else代码块总是与离自己最近的那个if语句配对
 
 #条件语句之switch
-多个if...else连在一起使用的时候，可以转为使用更方便的switch结构
+多个if...else连在一起使用的时候,可以转为使用更方便的switch结构
 switch(fruit){
     case"banana":
         //...
@@ -314,7 +314,7 @@ switch(fruit){
         //...
 }
 
-需要注意的是，每个case代码块内部的break语句不能少，否则会接下去执行下一个case代码块，而不是跳出switch结构。
+需要注意的是,每个case代码块内部的break语句不能少,否则会接下去执行下一个case代码块,而不是跳出switch结构。
 
 var x=1;
 
@@ -331,10 +331,10 @@ switch(x){
 //x等于其他值
 
 #三元运算符
-JavaScript还有一个三元运算符(即该运算符需要三个运算子)?：，也可以用于逻辑判断
+JavaScript还有一个三元运算符(即该运算符需要三个运算子)?：,也可以用于逻辑判断
 (条件)? 表达式1:表达式2
 
-这个三元运算符可以被视为if...else..的简写形式，因此可以用于多种场合,
+这个三元运算符可以被视为if...else..的简写形式,因此可以用于多种场合,
 
 判断一个整数是奇数与偶数
 var num=12;
@@ -351,34 +351,34 @@ console.log(result)
 
 #循环语句之for
 循环语句用于重复执行某个操作
-for语句就是循环命令，可以指定循环的起点、终点和终止条件。它的格式如下
+for语句就是循环命令,可以指定循环的起点、终点和终止条件。它的格式如下
 for (初始化表达式; 条件; 迭代因子){
     语句
 }
 
-for语句后面的括号里面，有三个表达式
-    初始化表达式(initialize):确定循环变量的初始值，只在循环开始时执行一次。
-    布尔表达式(test):每轮循环开始时，都要执行这个条件表达式，只有值为真，才继续进行循环。
-    迭代因子(increment):每轮循环的最后一个操作，通常用来递增循环变量。
+for语句后面的括号里面,有三个表达式
+    初始化表达式(initialize):确定循环变量的初始值,只在循环开始时执行一次。
+    布尔表达式(test):每轮循环开始时,都要执行这个条件表达式,只有值为真,才继续进行循环。
+    迭代因子(increment):每轮循环的最后一个操作,通常用来递增循环变量。
 
 //需求:从1打印到100
 for(var i= 1;i<=100;i++){
     console.log(i);
 }
 
-// 需求:声明个x变量，输出所有小于这个变量的值(正整数)0 1 2 3 4 5 6 7 8 9
+// 需求:声明个x变量,输出所有小于这个变量的值(正整数)0 1 2 3 4 5 6 7 8 9
 var x=10;
 for(var i = 0;i<x;i++){
     console.log(i);
 }
 
-for语句的三个表达式，
+for语句的三个表达式,
 可以省略任何一个也可以全部省略。
 for( ; ; ){
     console.log('He1lo world');
 }
 温馨提示
-如果三个都省略，结果就导致了一个无限循环(死循环)
+如果三个都省略,结果就导致了一个无限循环(死循环)
 
 实操
 //循环输出1~100之间数字的和
@@ -386,7 +386,7 @@ for( ; ; ){
 // 打印九九乘法表
 
 #循环语句之while
-While语句包括一个循环条件和一段代码块，只要条件为真，就不断循环执行代码块。
+While语句包括一个循环条件和一段代码块,只要条件为真,就不断循环执行代码块。
 while(条件){
     语句;
 }
@@ -398,12 +398,12 @@ while(i<100){
     i=i+ 1;
 }
 
-下面的例子是一个无限循环，因为循环条件总是为真
+下面的例子是一个无限循环,因为循环条件总是为真
 while(true){
-    console.log('He1lo，world');
+    console.log('He1lo,world');
 }
 
-所有for循环，都可以改写成while循环
+所有for循环,都可以改写成while循环
 // for
 var x=3;
 for(var i=0; i<x; i++){
@@ -418,7 +418,7 @@ while (i<x){
 }
 
 #break语句和continue语句
-break语句和continue语句都具有跳转作用，可以让代码不按既有的顺序执行
+break语句和continue语句都具有跳转作用,可以让代码不按既有的顺序执行
 
 break
     break语句用于跳出代码块或循环
@@ -430,7 +430,7 @@ console.log(i);
 }
 
 continue
-    continue语句用于应即终止本轮循环返回循环结构的头部，开始下一轮循环
+    continue语句用于应即终止本轮循环返回循环结构的头部,开始下一轮循环
 for(var i=0 ; i<5 ; i++){
     if(i === 3){
         continue ;
@@ -439,15 +439,15 @@ for(var i=0 ; i<5 ; i++){
 }
 
 #字符串
-字符串就是零个或多个排在一起的字符，放在单引号或双引号之中
-"itbaizhan"
-'itbaizhan'
+字符串就是零个或多个排在一起的字符,放在单引号或双引号之中
+"fan"
+'fan'
 
-单引号字符串的内部，可以使用双引号。双引号字符串的内部，可以使用单引号
+单引号字符串的内部,可以使用双引号。双引号字符串的内部,可以使用单引号
 'key ="value'
-"It's a long itbaizhan"
+"It's a long fan"
 
-如果要在单引号字符串的内部，使用单引号，就必须在内部的单引号前面加上反斜杠，用来转义。双引号字符串内部使用双引号，也是如此
+如果要在单引号字符串的内部,使用单引号,就必须在内部的单引号前面加上反斜杠,用来转义。双引号字符串内部使用双引号,也是如此
 'Did she say \'Hello\'?'
 //"Did she say 'He11o'?"
 
@@ -455,9 +455,9 @@ for(var i=0 ; i<5 ; i++){
 // "Did she say "Hello"?"
 
 温馨提示
-    字符串默认只能写在一行内，分成多行将会报错
+    字符串默认只能写在一行内,分成多行将会报错
 
-如果长字符串必须分成多行，可以在每一行的尾部使用反斜杠
+如果长字符串必须分成多行,可以在每一行的尾部使用反斜杠
 var longstring = 'Long \
 1ong \
 string' ;
@@ -465,127 +465,127 @@ longstring
 // "Long long long string"
 
 length 属性
-    length属性返回字符串的长度，该属性也是无法改变的
-var s='itbaizhan';
+    length属性返回字符串的长度,该属性也是无法改变的
+var s='fan';
 s.length // 9
 
 #字符串方法_charAt()
-charAt 方法返回指定位置的字符，参数是从0开始编号的
-var s= new string('itbaizhan');
+charAt 方法返回指定位置的字符,参数是从0开始编号的
+var s= new string('fan');
 s.charAt(1)//"t"
 
-如果参数为负数，或大于等于字符串的长度charAt 返回空字符串
-'itbaizhan'.charAt(-1)//""
-'itbaizhan'.charAt(9)//""
+如果参数为负数,或大于等于字符串的长度charAt 返回空字符串
+'fan'.charAt(-1)//""
+'fan'.charAt(9)//""
 
 #字符串方法_concat()
 concat 方法用于连接两个字符串,返回一个新字符串.不改变原字符串
-var sl = 'itbaizhan';
+var sl = 'fan';
 var s2 = 'sxt';
 
-s1.concat(s2) // "itbaizhansxt"
-s1 // "itbaizhan"
+s1.concat(s2) // "fansxt"
+s1 // "fan"
 
 该方法可以接受多个参数
-'sxt'.concat('itbaizhan','bjsxt')//'sxtitbaizhanbjsxt'
+'sxt'.concat('fan','bjsxt')//'sxtfanbjsxt'
 
-如果参数不是字符串，concat 方法会将其先转为字符串，然后再连接
+如果参数不是字符串,concat 方法会将其先转为字符串,然后再连接
 var one = 1;
 var two = 2;
 var three ='3'
 ''.concat(one,two,three)//"123"
 
 #字符串方法_substring()
-subsring 方法用于从原字符串取出子字符串并返回，不改变原字符串。
-它的第一个参数表示子字符串的开始位置，第二个位置表示结束位置(返回结果不含该位置)
-"itbaizhan".substring(0,2)//"it"
+subsring 方法用于从原字符串取出子字符串并返回,不改变原字符串。
+它的第一个参数表示子字符串的开始位置,第二个位置表示结束位置(返回结果不含该位置)
+"fan".substring(0,2)//"it"
 
-如果省略第二个参数，则表示子字符串一直到原字符串的结束
-'itbaizhan'.substring(2)//"baizhan"
+如果省略第二个参数,则表示子字符串一直到原字符串的结束
+'fan'.substring(2)//"lan"
 
-如果第一个参数大于第二个参数， substring 方法会自动更换两个参数的位置
-'itbaizhan'.substring(9，2)//"baizhan"
+如果第一个参数大于第二个参数, substring 方法会自动更换两个参数的位置
+'fan'.substring(9,2)//"lan"
 // 等同于
-'itbaizhan'.substring(2,9)//"baizhan"
+'fan'.substring(2,9)//"lan"
 
 substring 方法会自动将负数转为0如果参数是负数
 
 #字符串方法_substr()
-substr 方法用于从原字符串取出子字符串并返回，不改变原字符串，跟 substring 方法的作用相同
-substr 方法的第一个参数是子字符串的开始位置(从0开始计算)，第二个参数是子字符串的长度
-'itbaizhan'.substr(2,7);// baizhan
+substr 方法用于从原字符串取出子字符串并返回,不改变原字符串,跟 substring 方法的作用相同
+substr 方法的第一个参数是子字符串的开始位置(从0开始计算),第二个参数是子字符串的长度
+'fan'.substr(2,7);// lan
 
-如果省略第二个参数，则表示子字符串一直到原字符串的结束
-'itbaizhan'.substr(2)//"baizhan"
+如果省略第二个参数,则表示子字符串一直到原字符串的结束
+'fan'.substr(2)//"lan"
 
-如果第一个参数是负数，表示倒数计算的字符位置。如果第二个参数是负数，将被自动转为0，因此会返回空字符串
-'itbaizhan'.substr(-7)//"baizhan"
-'itbaizhan'.substr(4,-1)//'itbai'
+如果第一个参数是负数,表示倒数计算的字符位置。如果第二个参数是负数,将被自动转为0,因此会返回空字符串
+'fan'.substr(-7)//"lan"
+'fan'.substr(4,-1)//'itbai'
 
 #字符串方法_indexOf()
-indexOf方法用于确定一个字符串在另一个字符串中第一次出现的位置，返回结果是匹配开始的位置。
-如果返回-1，就表示不匹配
+indexOf方法用于确定一个字符串在另一个字符串中第一次出现的位置,返回结果是匹配开始的位置。
+如果返回-1,就表示不匹配
 'hello world'.indexof('o')//4
-'itbaizhan'.indexof('sxt')//-1
+'fan'.indexof('sxt')//-1
 
-indexOf方法还可以接受第二个参数，表示从该位置开始向后匹配
+indexOf方法还可以接受第二个参数,表示从该位置开始向后匹配
 'he1lo world'.indexof('o',6)// 7
 
 #字符串方法trim()
-tim 方法用于去除字符串'两端'的空格(中间的不行)，返回一个新字符串，不改变原字符串
+tim 方法用于去除字符串'两端'的空格(中间的不行),返回一个新字符串,不改变原字符串
 'hello world '.trim()
 //"hello world"
 
-该方法去除的不仅是空格，还包括制表符(\t、\v)、换行符(\n)和回车符(\r)
-'\r\ninitbaizhan \t'.trim()//'itbaizhan'
+该方法去除的不仅是空格,还包括制表符(\t、\v)、换行符(\n)和回车符(\r)
+'\r\ninfan \t'.trim()//'fan'
 
-ES6扩展方法，trimEnd()和trimstart() 方法
-'itbaizhan'.trimEnd();//    itbaizhan
-"itbaizhan".trimstart();// itbaizhan    
+ES6扩展方法,trimEnd()和trimstart() 方法
+'fan'.trimEnd();//    fan
+"fan".trimstart();// fan    
 
 #字符串方法_split()
-split 方法按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组
-'it|sxt|baizhan'.split('|') //["it","sxt","baizhan"]
+split 方法按照给定规则分割字符串,返回一个由分割出来的子字符串组成的数组
+'it|sxt|lan'.split('|') //["it","sxt","lan"]
 
-如果分割规则为空字符串，则返回数组的成员是原字符串的每一个字符
+如果分割规则为空字符串,则返回数组的成员是原字符串的每一个字符
 'a|b|c'.split('') // ["a", "|", "b","|","c"]
 
-如果省略参数，则返回数组的唯一成员就是原字符串
+如果省略参数,则返回数组的唯一成员就是原字符串
 'it|sxt|bz'.split() // ['it|sxt|bz']
 
-splt 方法还可以接受第二个参数，限定返回数组的最大成员数。
+splt 方法还可以接受第二个参数,限定返回数组的最大成员数。
 'it|sxt|bz'.split('|',0)// []
 'it|sxt|bz'.split('|',1) // ["it"]
 'it|sxt|bz'.split('|',2) // ['it','sxt']
 'it|sxt|bz'.split('|',4) // ['it','bz']
 
 #数组
-数组(array)是按次序排列的一组值。每个值的位置都有编号(从0开始)，整个数组用方括号表示。
-var arr =['sxt','baizhan','it'];
+数组(array)是按次序排列的一组值。每个值的位置都有编号(从0开始),整个数组用方括号表示。
+var arr =['sxt','lan','it'];
 
-两端的方括号是数组的标志。sxt是0号位置，baizhan是1号位置，it是2号位置
+两端的方括号是数组的标志。sxt是0号位置,lan是1号位置,it是2号位置
 
-除了在定义时赋值，数组也可以先定义后赋值。
+除了在定义时赋值,数组也可以先定义后赋值。
 var arr=[];
 arr[0]='sxt';
-arr[1]='baizhan';
+arr[1]='lan';
 arr[2]= 'it';
 
-任何类型的数据，都可以放入数组
+任何类型的数据,都可以放入数组
 var arr =[100,[1,2,3],false]
 
-如果数组的元素还是数组，就形成了多维数组
+如果数组的元素还是数组,就形成了多维数组
 var a =[[1,2],[3,4]];
 a[0][1] // 2
 a[1][1] // 4
 
 length 属性
-数组的length属性，返回数组的成员数量
-['sxt','baizhan','it'].length // 3
+数组的length属性,返回数组的成员数量
+['sxt','lan','it'].length // 3
 
 #数组的遍历
 数组的遍历可以考虑使用for循环或while循环
-var a =['sxt','baizhan','it']
+var a =['sxt','lan','it']
 // for循环
 for(var i=0 ; i<a.length ; i++){
     console.log(a[i]);
@@ -604,32 +604,32 @@ for(var i in a){
 }
 
 #数组静态方法_Array.isArray()
-Aray.isArray 方法返回一个布尔值，表示参数是否为数组。它可以弥补 typeor 运算符的不足
-var arr =["尚学堂"，100，true];
+Aray.isArray 方法返回一个布尔值,表示参数是否为数组。它可以弥补 typeor 运算符的不足
+var arr =["wang",100,true];
 console.log(typeof arr);// object
 
-var arr =['sxt','baizhan','it'];
+var arr =['sxt','lan','it'];
 Array.isArray(arr)//true
 
 #数组方法_push()/pop()
-push方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。注意，该方法会改变原数
+push方法用于在数组的末端添加一个或多个元素,并返回添加新元素后的数组长度。注意,该方法会改变原数
 组
 var arr = [];
-arr.push("尚学堂")
-arr.push('itbaizhan')
+arr.push("wang")
+arr.push('fan')
 arr.push(true,{})
-arr //[尚学堂，'itbaizhan',true,{}]
+arr //[wang,'fan',true,{}]
 
-pop 方法用于删除数组的最后一个元素，并返回该元素。注意，该方法会改变原数组
-var arr =['尚学堂','itbaizhan','WEB前端'];
+pop 方法用于删除数组的最后一个元素,并返回该元素。注意,该方法会改变原数组
+var arr =['wang','fan','WEB前端'];
 arr.pop()//'WEB前端'
-arr //['尚学堂','itbaizhan']
+arr //['wang','fan']
 
 #数组方法_shift/unshift
-shift 方法用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组
-var arr =['尚学堂','itbaizhan'.'WEB前端'];
-arr.shift()//'尚学堂'
-arr //['itbaizhan','WEB前端']
+shift 方法用于删除数组的第一个元素,并返回该元素。注意,该方法会改变原数组
+var arr =['wang','fan'.'WEB前端'];
+arr.shift()//'wang'
+arr //['fan','WEB前端']
 
 shift 方法可以遍历并清空一个数组
 var list=[1,2,3,4,5,6];
@@ -639,18 +639,194 @@ while ( item=list.shift()) {
 }
 list // []
 
-unshift 方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组
-var arr=['尚学堂','itbaizhan','WEB前端'];
-arr.unshift('baizhan');
-arr //['baizhan','itbaizhan','尚学堂','WEB前端']
+unshift 方法用于在数组的第一个位置添加元素,并返回添加新元素后的数组长度。注意,该方法会改变原数组
+var arr=['wang','fan','WEB前端'];
+arr.unshift('lan');
+arr //['lan','fan','wang','WEB前端']
 
-unshi 方法可以接受多个参数，这些参数都会添加到目标数组头部
-var arr =['尚学堂','itbaizhan'];
-arr.unshift('WEB前端','baizhan')
-arr //['WEB前端','baizhan ','尚学堂','itbaizhan']
+unshi 方法可以接受多个参数,这些参数都会添加到目标数组头部
+var arr =['wang','fan'];
+arr.unshift('WEB前端','lan')
+arr //['WEB前端','lan ','wang','fan']
 
 #数组方法_jion()
+join 方法以指定参数作为分隔符,将所有数组成员连接为一个字符串返回。
+如果不提供参数,默认用逗号分隔
+var a=[1,2,3,4];
+a.join(' ') //'1 2 3 4'
+a.join('|')//'1|2|3|4'
+a.join()//"1,2,3,4"
 
+如果数组成员是 undefined 或 null 或空位,会被转成空字符串
+[undefined, null].join('#')
+//'#'
+['a',,'b'].join('-')45 //'a--b'
 
+数组的join 配合字符串的 split 可以实现数组与字符串的互换
+var arr = ["a","b","c"];
+var myArr = arr.join(" ");
+console.1og(myArr);
+console.1og(myArr.split(" "));
 
-####################################
+#数组方法_concat()
+concat 方法用于多个数组的合并。它将新数组的成员,添加到原数组成员的后部,然后返回一个新数组,原数组不变
+['hello'].concat(['world']) //["he11o","world"]
+['he11o'].concat(['world'], ['!'])  // ["he11o","world","!"]
+
+除了数组作为参数,concat 也接受其他类型的值作为参数,添加到目标数组尾部。
+[1,2,3].concat(4,5,6)   //[1,2,3,4,5,6]
+
+应用场景
+上拉加载,合并数据
+
+#数组方法_reverse()
+reverse 方法用于颠倒排列数组元素,返回改变后的数组。注意,该方法将改变原数组
+var a = ['a','b','c'];
+a.reverse() //['a','b','c']
+a // ['c','b','c']
+
+实现一个字符串反转排列
+var str ="hello"
+str.split("").reverse().join("")
+
+#数组方法_indexOf()
+indexo 方法返回给定元素在数组中第一次出现的位置,如果没有出现则返回 -1
+var arr = ['a','b','c'];
+arr.indexof('b')// 1
+arr.indexof('y')// -1
+
+indexof方法还可以接受第二个参数,表示搜索的开始位置
+['wang','chao','fan'].indexOf('wang',1)// -1
+
+#函数简介
+函数是一段可以反复调用的代码块
+
+函数的声明
+function 命令: function命令声明的代码区块,就是一个函数。
+function命令后面是函数名,函数名后面是对圆括号,里面是传入函数的参数。函数体放在大括号里面。
+function print(s){
+    console.log(s):
+}
+
+函数名的提升
+lavaScript 引擎将函数名视同变量名,所以采用function命令声明函数时,整个函数会像变量声明一样,被提升到代码头部
+add();
+function add() {}
+
+函数参数
+函数运行的时候,有时需要提供外部数据,不同的外部数据会得到不同的结果,这种外部数据就叫参数
+function square(x){
+    console.log(x * x);
+}
+square(2)//4
+square(3)//9
+
+函数返回值
+JavaScript函数提供两个接口实现与外界的交互,其中参数作为入口,接收外界信息;返回值作为出口,把运算结果反馈给外界
+function getName(name){
+    return name;
+}
+
+#对象概述
+var user ={
+    name:"itbaizhan",
+    age:'13'
+}
+
+对象的每一个键名又称为“属性”(property),它的“键值“可以是任何数据类型。如果一个属性的值为函数,通常把这个属性称为“方法”,它可以像函数那样调用
+var user={
+    getName:function(name){
+        return name;
+    }
+};
+user.getName("itbaizhan") //itbaizhan
+// 对象.属性
+如果属性的值还是一个对象,就形成了链式引用
+var user={
+    name:"itbaizhan"
+    age:13,
+    container:{
+        frontEnd:["web前端","Android","ios"],
+        backEnd: ["java" ,"Python"]
+    }
+}
+user.container.frontEnd //["web前端","Android","i0s"]
+
+#math对象
+Math是JavaScript 的原生对象,提供各种数学功能
+
+Math.abs()
+    math.abs 方法返回参数值的绝对值
+    Math.abs(1)    // 1
+    Math.abs(-1)    // 1
+
+Math.max(),Math.min()
+    math.max 方法返回参数之中最大的那个值, Math.min 返回最小的那个值。
+    如果参数为空,math.min 返回 infinity,Math.max 返回 -Infinity 。
+    Math.max(2,-1,5)    // 5
+    Math.min(2,-1,5)    // -1
+    Math.min()    //Infinity2
+    Math.max()    //-Infinity
+
+Math.floor(), Math.ceil()
+    Math.floor 方法返回小于参数值的最大整数
+    Math.floor(3.2)     //3
+    Math.floor(-3.2)    //-4
+
+    Mat.ceil 方法返回大于参数值的最小整数
+    Math.ceil(3.2)      //4
+    Math.ceil(-3.2)     //-3
+
+Math.random()
+    Math.random()返回0到1之间的一个伪随机数,可能等于0,但是一定小于1
+    Math.random()       //0.28525367438365223
+
+任意范围的随机数牛成函数如下
+    function getRandomArbitrary(min,max){
+        return Math.random()*(max- min)+ min;
+    getRandomArbitrary(5,10)
+
+#Date对象
+Date 对象是 JavaScript 原生的时间库。它以1970年1月1日00:00:00作为时间的零点,可以表示的时间范围是前后各1亿天(单位为毫秒)
+
+Date.now()
+    Date.now 方法返回当前时间距离时间零点(1970年1月1日 00:00:00 UTC)的毫秒数,相当于 Unix 时间戳乘以1000
+
+Date.now();     //1710839371253
+Date(1635216733395);         // Tue Mar 19 2024 17:09:51 GMT+0800 (中国标准时间)
+new Date();     // 最新的时间 Tue Mar 19 2024 17:16:16 GMT+0800 (中国标准时间)
+
+时间戳
+    时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。
+    格林威治和北京时间就是时区的不同
+    Unix是20世纪70年代初出现的一个操作系统,Unix认为1970年1月1日0点是时间纪元。javaScript也就遵循了这一约束
+
+Date 对象提供了一系列 get 方法,用来获取实例对象某个方面的值
+
+实例方法get类
+    getTime():返回实例距离1970年1月1日00:00:00的毫秒数
+    getDate():返回实例对象对应每个月的几号(从1开始)
+    getDay():返回星期几,星期日为0,星期一为1,以此类推
+    getYear():返回距离1900的年数
+    getFullYear():返回四位的年份
+    getMonth():返回月份(0表示1月,11表示12月)
+    getHours():返回小时(0-23)
+    getMilliseconds():返回亳秒(0-999)
+    getMinutes():返回分钟(0-59)
+    getSeconds():返回秒(0-59)
+
+    var d=new Date('january 6,2022');
+    d.getDate()//6
+    d.getmonth()//0
+    d.getYear()// 122
+    d.getFu11Year()// 2022
+
+编写函数获得本年度剩余天数
+    function leftDays(){
+        var today =new Date();
+        var endYear =new Date(today.getFullYear(),11,31,23,59,59, 999);
+        var msPerDay=24*60*60 * 1000;
+        return Math.round((endYear.getTime()-today.getTime())/ msPerDay);
+    }
+
+#############################
