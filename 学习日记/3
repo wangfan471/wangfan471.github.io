@@ -795,6 +795,7 @@ Date.now()
 Date.now();     //1710839371253
 Date(1635216733395);         // Tue Mar 19 2024 17:09:51 GMT+0800 (中国标准时间)
 new Date();     // 最新的时间 Tue Mar 19 2024 17:16:16 GMT+0800 (中国标准时间)
+getFullYear(),11,30,23,59,59,999        // 11,30,23,59,59,999  月,日,时,分,秒
 
 时间戳
     时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。
@@ -829,4 +830,96 @@ Date 对象提供了一系列 get 方法,用来获取实例对象某个方面的
         return Math.round((endYear.getTime()-today.getTime())/ msPerDay);
     }
 
-#############################
+#DOM概述
+DOM 是JavaScript 操作网页的接口,全称为“文档对象模型”(Document Object Model)。
+它的作用是将网页转为一个JavaScript 对象,从而可以用脚本进行各种操作(比如对元素增删内容)
+
+浏览器会根据 DOM 模型,将结构化文档HTML解析成一系列的节点,再由这些节点组成一个树状结构(DOMTree)。
+所有的节点和最终的树状结构,都有规范的对外接口
+
+DOM 只是一个接口规范,可以用各种语言实现。所以严格地说,DOM不是IavaScript语法的一部分,但是
+DOM 操作是 lavaScript最常见的任务,离开了 DOM,lavaScript 就无法控制网页。另一方面,lavaScript 也是最常用于 DOM 操作的语言
+
+节点
+    DOM 的最小组成单位叫做节点(node)文档的树形结构(DOM 树),就是由各种不同类型的节点组成,每个节点可以看作是文档树的一片叶子
+
+节点的类型有七种
+    Document:整个文档树的顶层节点
+    DocumentType:doctype标签
+    Element:网页的各种HTML标签
+    Attribute:网页元素的属性(比如class="right")
+    Text:标签之间或标签包含的文本
+    Comment:注释
+    DocumentFragment:文档的片段
+
+节点树
+一个文档的所有节点,按照所在的层级,可以抽象成一种树状结构。这种树状结构就是 DOM 树。它有一个顶层节点,
+下一层都是顶层节点的子节点,然后子节点又有自己的子节点,就这样层层衍生出一个金字塔结构倒过来就像一棵树
+
+浏览器原生提供document节点,代表整个文档
+    document
+    // 整个文档树
+
+除了根节点,其他节点都有三种层级关系
+    父节点关系(parentNode):直接的那个上级节点
+    子节点关系(childNodes):直接的下级节点
+    同级节点关系(sibling):拥有同一个父节点的节点
+
+Node.nodeType属性
+不同节点的nodeType属性值和对应的常量如下
+    文档节点(document):9,对应常量Node.DOCUMENT_NODE
+    元素节点(element):1,对应常量Node.ELEMENT NODE
+    属性节点(attr):2,对应常量Node.ATTRIBUTE_NODE
+    文本节点(text):3,对应常量Node.TEXT_NODE
+    文档片断节点(DocumentFragment):11,对应常量Node.DOCUMENT_FRAGMENT_NODE
+
+    document.nodeType //9
+    document.nodeType === Node.DOCUMENT_NODE // true
+
+#document对象方法/获取元素
+document获取元素
+    getElementsByTagName
+    getElementsByClassName
+    getElementsByName
+    getElementByld
+    querySelector
+    querySelectorAll
+
+document.getElementsByTagName()
+    document.getElemenseyTagName 方法搜索 HTML 标签名,'返回符合条件的元素'。它的返回值是一个类似数组对象
+    (HTMLcolection 实例),可以实时反映 HTML 文档的变化。如果没有任何匹配的元素,就返回一个空集
+    var paras =document.getElementsByTagName('p');
+
+.innerHTML
+    修改内容
+
+如果传入*,就可以返回文档中所有 HTML 元素
+    var allElements=document.getElementsByTagName('*');
+
+document.getElementsByClassName()
+    document.getElementsByClassName 方法返回一个类似数组的对象(HTMLCollection 实例),包括了'所有 class 名字
+    符合指定条件的元素',元素的变化实时反映在返回结果中
+    var elements=document.getElementsByClassName(names);
+    由于 cass 是保留字,所以JavaScript 一律使用 cassName 表示 CSS 的 class
+    参数可以是多个 class ,它们之间使用空格分隔
+    var elements= document.getElementsByclassName('foo bar');
+
+document.getElementsByName()
+    document.getElementsByName 方法用于选择'拥有 name 属性的 HTML元素'(比如 <form>、<img>、<radio>等),
+    返回一个类似数组的的对象(NodeList 实例),因为 name 属性相同的元素可能不止一个
+    //  表单为 <form name='itbaizhan'></form>
+    var forms = document.getElementsByName('itbaizhan');
+
+document.getElementByld()
+    document.getElementByd 方法返回匹配指定id 属性的元素节点。如果没有发现匹配的节点,则返回 'null'
+    var elem=document.getElementById('paral');
+    注意,该方法的参数是大小写敏感的。比如,如果某个节点的'id'属性是 'main' ,那么 document.getElemeniByd(main)将返回 'null'
+
+document.querySelector()
+    documenlquerselector 方法接受一个 CS 选择器作为参数,返回匹配该选择器的元素节点。
+    如果有多个节点满足匹配条件,则返回第一个匹配的节点。如果没有发现匹配的节点,则返回 'null'
+    var ell=document.queryselector('.myclass');
+
+document.querySelectorAll()
+
+###########################

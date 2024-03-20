@@ -42,7 +42,15 @@
         // console.log(Date(1710839371253));
         // console.log(new Date(1710839371253));
         // console.log(new Date());
-        console.log(new Date(1710839371253).getFullYear())
+        var today = new Date()
+        var Year = new Date().getFullYear()
+        var Month = new Date().getMonth() + 1
+        var Day = new Date().getDate()
+        console.log(Year + '-' + Month + '-' +Day);
+
+        var endyear = new Date(today.getFullYear(),11,30,23,59,59,999)
+        var msperday = 24*60*60*1000
+        console.log((endyear.getTime()-today.getTime())/msperday);
         // Date对象
 
 
