@@ -921,5 +921,32 @@ document.querySelector()
     var ell=document.queryselector('.myclass');
 
 document.querySelectorAll()
+    document.querySelectorAll方法与querySelector查询选择器用法类似,区别是返回一个nodelist列表对象,包含所有匹配给定选择器的节点
+    节点
+    var elementList=document.querySelectorAll('.my class');
 
-###########################
+#document对象_方法/创建元素
+document创建元素
+    createElement
+    createTextNode
+    createAttribute
+
+document.createElement()
+    document.createElement 方法用来生成元素节点,并返回该节点
+    var newDiv=document.createElement('div');
+
+document.createTextNode()
+    document.createTextNode 方法用来生成文本节点(Text 实例),并返回该节点。它的参数是文本节点的内容
+    var newDiv=document.createElement('div');
+    var newcontent=document.createTextNode('Hello');
+    newDiv.appendchild(newcontent); //  将内容或者元素放到容器之中
+
+document.createAttribute()
+    document.createAttribute 方法生成一个新的属性节点(Attr实例),并返回它
+    var attribute =document.createAttribute(name);
+    
+    var root=document.getElementById('root');
+    var it=document.createAttribute('itbaizhan');
+    it.value = 'it';
+    root.setAttributeNode(it);
+##########################
