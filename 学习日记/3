@@ -916,7 +916,7 @@ document.getElementByld()
     注意,该方法的参数是大小写敏感的。比如,如果某个节点的'id'属性是 'main' ,那么 document.getElemeniByd(main)将返回 'null'
 
 document.querySelector()
-    documenlquerselector 方法接受一个 CS 选择器作为参数,返回匹配该选择器的元素节点。
+    documenlquerselector 方法接受一个 CSS 选择器作为参数,返回匹配该选择器的元素节点。
     如果有多个节点满足匹配条件,则返回第一个匹配的节点。如果没有发现匹配的节点,则返回 'null'
     var ell=document.queryselector('.myclass');
 
@@ -949,4 +949,159 @@ document.createAttribute()
     var it=document.createAttribute('itbaizhan');
     it.value = 'it';
     root.setAttributeNode(it);
-##########################
+
+#Element对象_属性
+    id
+    classlist
+    className
+    innerHTML
+    innerText
+
+Element对象对应网页的 HTML 元素。每一个 HTML 元素,在 DOM 树上都会转化成一个Element节点对象
+
+Element.id
+    Element.id 属性返回指定元素的id 属性,该属性可读写
+    var p1 =document.getElementsByClassName('class1')
+    p1.id = 'id1'
+    console.log(p1);
+
+Element.className
+    className 属性用来读写当前元素节点的 class 属性。它的值是一个字符串,每个 cass 之间用空格分割
+    var p2 = document.getElementById('id2')
+    p2.className = 'class2'
+    console.log(p2);
+
+Element.classList
+    classList 对象有下列方法
+    add() :增加一个 class。
+    remove():移除一个 class。
+    contains():检查当前元素是否包含某个 class.
+    toggle0 :将某个 class 移入或移出当前元素,
+var div=document.getElementById('myDiv');
+div.classList.add('myCssclass');
+div.classList.add('foo','bar');
+div.classList.remove('myCssclass');
+div.classList.toggle('myCssclass');// 如果 mycssclass 不存在就加入,否则移除7
+div.classList.contains('myCssclass');// 返回 true 或者 false
+
+Element.innerHTML
+    Element.innerHTML属性返回一个字符串,等同于该元素包含的所有 HTML 代码。该属性可读写,常用来设置某节点的内容。
+    它能改写所有元素节点的内容,包括<HTML>和 <body>元素
+    el.innerHTML ='':
+
+Element.innerText
+    innerText 和 innerHTML类似,不同的是 innerText无法识别元素,会直接渲染成字符串
+
+innerHTML和innerText的区别
+读取,innerHTML识别标签返回所有内容,innerText返回文本
+写入,innerHTMl识别标签返回文本innerText返回所有
+
+#Element获取元素位置
+    属性;描述
+    clientHeight;获取元素高度包括 padding 部分,但是不包括 border、margin
+    clientwidth;获取元素宽度包括 padding 部分,但是不包括 border、margin
+    scrollHeight;元素总高度,它包括 padding ,但是不包括 border、 margin包括溢出的不可见内容
+    scrollwidth;元素总宽度,它包括 padding ,但是不包括 border、 margin 包括溢出的不可见内容
+    scrollLeft;元素的水平滚动条向右滚动的像素数量
+    scrollTop;元素的垂直滚动条向下滚动的像素数量
+    offsetHeight;元素的 CSS 垂直高度(单位像素),包括元素本身的高度、padding和 border
+    offsetwidth;元素的 CSS 水平宽度(单位像素),包括元素本身的高度、padding和 border
+    offsetLeft;到定位父级左边界的间距
+    offsetTop;到定位父级上边界的间距
+
+Element.clientHeight, Element.clientWidth
+    Element.clienHeigh: 属性返回一个整数值,表示元素节点的 CSS 高度(单位像素),只对块级元素生效,
+    对于行内元素返回0。如果块级元素没有设置 CSS 高度,则返回实际高度
+   
+    除了元素本身的高度,它还包括`padding部分,但是不包括border、margin 。
+    如果有水平滚动条,还要减去水平滚动条的高度。注意,这个值始终是整数,如果是小数会被四舍五入。
+    
+    Elemen.clienwidth 属性返回元素节点的 CSS 宽度,同样只对块级元素有效,也是只包括元素本身的宽度和padding ,
+    如果有垂直滚动条,还要减去垂直滚动条的宽度。
+    
+    document.documentElement 的 clientHeight属性,返回当前视口的高度(即浏览器窗口的高度)。
+    document.body的高度则是网页的实际高度。
+
+    // 视口高度
+    document.documentElement.clientHeight
+    // 网页总高度
+    document.body.clientHeight
+
+Element.scrollLeft, Element.scrollTop
+    Element.scrollleft 属性表示当前元素的水平滚动条向右侧滚动的像素数量, Element.scrollTop 属性表示当前元素的
+    垂直滚动条向下滚动的像素数量。对于那些没有滚动条的网页元素,这两个属性总是等于0
+
+    如果要査看整张网页的水平的和垂直的滚动距离,要从 document.documentElement 元素上读取
+    document.documentElement.scrollLeft
+    document.documentElement.scrollTop
+
+Element.offsetHeight, Element.offsetWidth
+    Element.offsetHeignt 属性返回一个整数,表示元素的 CSS 垂直高度(单位像素),包括元素本身的高度
+    padding 和 border,以及水平滚动条的高度(如果存在滚动条)。
+
+Element.offsetwidth 属性表示元素的 CSS 水平宽度(单位像素),其他都与 Elemen.offsetHeight 一致。
+    这两个属性都是只读属性,只比 Elemen.clieniHeight 和 Element.clientwidth 多了边框的高度或宽度。
+    如果元素的 CSS设为不可见(比如 display:none；),则返回0
+
+#操作CSS
+HTML 元素的 styie 属性
+    操作 CSS 样式最简单的方法就是使用网页元素节点的 setAttribute 方法直接操作网页元素的 style 属性
+    var div1 = document.createElement('div')
+    div1.className = 'div1'
+    div1.setAttribute(
+        'id',
+        'id1'
+    )
+    div1.setAttribute(
+        'style',
+        'width:200px ; height:200px ; background-color:blue;'
+    )
+    console.log(div1);
+    document.body.appendChild(div1)
+
+元素节点的 style 属性
+    var divstyle=document.queryselector('div').style;
+    divstyle.backgroundcolor ='red';
+    divstyle.border='1px solid black';
+    divstyle.width='100px';
+    divstyle.height='100px';
+    divstyle.fontsize ='10em';
+
+cssText属性
+    var divstyle = document.querySelector('div').style:
+    divstyle.cssText='background-color: red;'
+        +'border: lpx solid black;'
+        +'height: 100px;'
+        +'width:100px;'
+    
+#事件处理程序
+事件处理程序分为:
+    HTML事件处理;缺点html与js不分离
+    DOM0级事件处理;优点:html和js分离;缺点:无法添加多个事件，事件被覆盖
+    DOM2级事件处理;优点:事件不会被覆盖;缺点:写起来麻烦
+
+HTML事件处理
+    <button onclick="clicktimes()">按钮</button>
+    <script>
+        function clicktimes(){
+            console.log('点击了按钮')
+        }
+    </script>
+
+#事件类型之鼠标事件
+鼠标事件指与鼠标相关的事件，具体的事件主要有以下一些
+    click:按下鼠标时触发
+    dblclick:在同一个元素上双击鼠标时触发
+    mousedown:按下鼠标键时触发
+    mouseup:释放按下的鼠标键时触发
+    mousemove:当鼠标在节点内部移动时触发。当鼠标持续移动时，该事件会连触发。
+    mouseenter:鼠标进入一个节点时触发，进入子节点不会触发这个事件
+    mouseleave:鼠标离开一个节点时触发，离开父节点不会触发这个事件
+    mouseover:鼠标进入一个节点时触发，进入子节点会再一次触发这个事件 
+    mouseout:鼠标离开一个节点时触发，离开父节点也会触发这个事件
+    wheel:滚动鼠标的滚轮时触发
+
+
+
+
+#####################

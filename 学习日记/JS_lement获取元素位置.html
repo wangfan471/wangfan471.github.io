@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: azure;
+            margin: 100px;
+            position: relative;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin: 20px;
+            border: 10px solid rebeccapurple;
+            padding: 50px;
+        }
+        p{
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1" id="id1"></div>
+    </div>
+    <p>段落1</p>
+    <p>段落2</p>
+    <p>段落3</p>
+    <p>段落4</p>
+
+    <script>
+        var id1 = document.getElementById('id1')
+        console.log(id1.clientHeight);// padding*2+height
+
+        console.log(document.documentElement.clientHeight);
+        console.log(document.body.clientHeight);
+
+        console.log(id1.scrollHeight);
+        console.log(document.documentElement.scrollHeight);
+        console.log(document.documentElement.scrollTop);//页面向下滚动才有值
+
+        console.log(id1.offsetHeight);
+        console.log(id1.offsetWidth);
+
+        console.log(id1.offsetLeft);// 定位文档流会改变返回值
+        console.log(id1.offsetTop);
+
+
+
+
+    </script>
+</body>
+</html>

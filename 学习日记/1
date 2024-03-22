@@ -11,6 +11,7 @@ ctrl+{|}：文本向左|向右平移
     open in browser\chinese
     gitlens
     git history
+    Comment Translate;https://blog.csdn.net/m0_62299939/article/details/128781660
 # html5的doctyoe声明
 <!DOCTYPE html>
 避免浏览器差异

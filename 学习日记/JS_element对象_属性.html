@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+
+        .box1{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <p class="class1">aaa</p>
+    <div class="box" id="id2">bbb</div>
+    <div id="id3" class="box">百度<a href="www.baidu.com"></a></div>
+    <script>
+        var p1 =document.getElementsByClassName('class1')
+        p1.id = 'id1'
+        console.log(p1);
+
+        var div1 = document.getElementById('id2')
+        div1.className = 'box box1'
+        // console.log(div1);
+
+        div1.classList.add('box2','box3')
+        // console.log(div1);
+
+        div1.classList.remove('box3')
+        // console.log(div1);
+
+        if(div1.classList.toggle('box4')){
+            console.log('有');
+        }else{
+            console.log('没有');
+        }
+
+        if(div1.classList.contains('box4')){
+            console.log('有');
+        }else{
+            console.log('没有');
+        }
+
+        console.log(div1.innerHTML);// 读取
+        console.log(div1.innerHTML='ccc');// 写入
+
+        id3 = document.getElementById('id3')
+        console.log(id3.innerText);
+        console.log(id3.innerHTML);
+
+        var str1 = '<a href="www.goole.com">goole</a>'
+        id3.innerHTML =str1
+        // id3.innerText =str1
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

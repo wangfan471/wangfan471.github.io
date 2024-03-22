@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML事件 -->
+    <!-- <button onclick="clicktimes()">按钮</button>
+    <script>
+        function clicktimes(){
+            console.log('点击了按钮')
+        }
+    </script> -->
+
+    <!-- <button id="id1">按钮</button>
+    <script>
+        var id1 = document.getElementById('id1')
+        id1.onclick = function () {
+            console.log('点击了1');
+        }
+        
+        id1.onclick = function () {
+            console.log('点击了2');
+        }
+    </script> -->
+
+    <button id="id1">按钮</button>
+    <script>
+        var id1 = document.getElementById('id1')
+        id1.addEventListener('click',function () {
+            console.log('点击了1');
+        })
+        id1.addEventListener('click',function () {
+            console.log('点击了2');
+        })
+    </script>
+</body>
+</html>
