@@ -1077,7 +1077,7 @@ cssText属性
 #事件处理程序
 事件处理程序分为:
     HTML事件处理;缺点html与js不分离
-    DOM0级事件处理;优点:html和js分离;缺点:无法添加多个事件，事件被覆盖
+    DOM0级事件处理;优点:html和js分离;缺点:无法添加多个事件,事件被覆盖
     DOM2级事件处理;优点:事件不会被覆盖;缺点:写起来麻烦
 
 HTML事件处理
@@ -1088,20 +1088,109 @@ HTML事件处理
         }
     </script>
 
+    DOM0级事件处理
+    <button id="id1">按钮</button>
+    <script>
+        var id1 = document.getElementById('id1')
+        id1.onclick = function () {
+            console.log('点击了1');
+        }
+        
+        id1.onclick = function () {
+            console.log('点击了2');
+        }
+    </script>
+
+    DOM2级事件处理
+    <button id="id1">按钮</button>
+    <script>
+        var id1 = document.getElementById('id1')
+        id1.addEventListener('click',function () {
+            console.log('点击了1');
+        })
+        id1.addEventListener('click',function () {
+            console.log('点击了2');
+        })
+    </script>
 #事件类型之鼠标事件
-鼠标事件指与鼠标相关的事件，具体的事件主要有以下一些
+鼠标事件指与鼠标相关的事件,具体的事件主要有以下一些
     click:按下鼠标时触发
     dblclick:在同一个元素上双击鼠标时触发
     mousedown:按下鼠标键时触发
     mouseup:释放按下的鼠标键时触发
-    mousemove:当鼠标在节点内部移动时触发。当鼠标持续移动时，该事件会连触发。
-    mouseenter:鼠标进入一个节点时触发，进入子节点不会触发这个事件
-    mouseleave:鼠标离开一个节点时触发，离开父节点不会触发这个事件
-    mouseover:鼠标进入一个节点时触发，进入子节点会再一次触发这个事件 
-    mouseout:鼠标离开一个节点时触发，离开父节点也会触发这个事件
+    mousemove:当鼠标在节点内部移动时触发。当鼠标持续移动时,该事件会连触发。
+    mouseenter:鼠标进入一个节点时触发,进入子节点不会触发这个事件
+    mouseleave:鼠标离开一个节点时触发,离开父节点不会触发这个事件
+    mouseover:鼠标进入一个节点时触发,进入子节点会再一次触发这个事件 
+    mouseout:鼠标离开一个节点时触发,离开父节点也会触发这个事件
     wheel:滚动鼠标的滚轮时触发
 
+温馨提示
+    这些方法在使用的时候,除了DOM2级事件,都需要添加前缀on
+
+#Event事件对象
+事件发生以后，会产生一个事件对象，作为参数传给监听函数
+
+Event对象属性
+    Event.Target
+    Event.type
+
+Event.target
+    Event.target属性返回事件当前所在的节点
+    <button id="btn1">按钮</button>
+    <script>
+        var btn1 = document.getElementById('btn1')
+        btn1.onclick = function(event){
+            console.log(event.target);
+            event.target.innerHTML = '点击之后'
+        }
+    </script>
+Event.type
+    Event.type属性返回一个字符串，表示事件类型。事件的类型是在生成事件的时候。该属性只读
+
+Event对象方法
+    Event.preventDefault()
+    Event.stopPropagation()
+
+Event.preventDefault
+    Event.preventDefault方法取消浏览器对当前事件的默认行为。比如点击链接后，浏览器默认会跳转到另一个页面，
+    使用这个方法以后，就不会跳转了
+    <button id="btn3">
+        <a href="https://www.baidu.com/" id="a1">百度</a>
+    </button>
+    <script>
+        var a1 = document.getElementById('a1')
+        a1.onclick = function(e){
+            e.preventDefault()
+        }
+    </script>
 
 
+Event.stopPropagation()
+    stopPropagation方法阻止事件在 DOM 中继续传播，防止再触发定义在别的节点上的监听函数，但是不包括在当前节点上其他的事件监听函数
+    btn.onclick =function(e){
+        e.stopPropagation();//阻止事件冒泡
+        console.log("btn4");
+    }
 
-#####################
+#事件类型之键盘事件
+键盘事件由用户击打键盘触发,主要有keydown、keypress、keyup三个事件
+    keydown:按下键盘时触发。
+    keypress:按下有值的键时触发，即按下 Ctrl、Alt、Shift、Meta 这样无值的键，这个事件不会触发。对于有值的键，按下时先触发keydown事件，再触发这个事件
+    keyup:松开键盘时触发该事件
+
+username.onkeypress=function(e){
+    console.1og("keypress事件");
+}
+
+event对象
+    keyCode:唯一标识
+    var username =document.getElementById("username");
+    username.onkeydown = function(e){
+        if(e.keycode === 13){
+            console.10g("回车");
+        }
+    }
+
+
+###################
