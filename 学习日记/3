@@ -1129,7 +1129,7 @@ HTML事件处理
     这些方法在使用的时候,除了DOM2级事件,都需要添加前缀on
 
 #Event事件对象
-事件发生以后，会产生一个事件对象，作为参数传给监听函数
+事件发生以后,会产生一个事件对象,作为参数传给监听函数
 
 Event对象属性
     Event.Target
@@ -1146,15 +1146,15 @@ Event.target
         }
     </script>
 Event.type
-    Event.type属性返回一个字符串，表示事件类型。事件的类型是在生成事件的时候。该属性只读
+    Event.type属性返回一个字符串,表示事件类型。事件的类型是在生成事件的时候。该属性只读
 
 Event对象方法
     Event.preventDefault()
     Event.stopPropagation()
 
 Event.preventDefault
-    Event.preventDefault方法取消浏览器对当前事件的默认行为。比如点击链接后，浏览器默认会跳转到另一个页面，
-    使用这个方法以后，就不会跳转了
+    Event.preventDefault方法取消浏览器对当前事件的默认行为。比如点击链接后,浏览器默认会跳转到另一个页面,
+    使用这个方法以后,就不会跳转了
     <button id="btn3">
         <a href="https://www.baidu.com/" id="a1">百度</a>
     </button>
@@ -1167,7 +1167,7 @@ Event.preventDefault
 
 
 Event.stopPropagation()
-    stopPropagation方法阻止事件在 DOM 中继续传播，防止再触发定义在别的节点上的监听函数，但是不包括在当前节点上其他的事件监听函数
+    stopPropagation方法阻止事件在 DOM 中继续传播,防止再触发定义在别的节点上的监听函数,但是不包括在当前节点上其他的事件监听函数
     btn.onclick =function(e){
         e.stopPropagation();//阻止事件冒泡
         console.log("btn4");
@@ -1176,21 +1176,49 @@ Event.stopPropagation()
 #事件类型之键盘事件
 键盘事件由用户击打键盘触发,主要有keydown、keypress、keyup三个事件
     keydown:按下键盘时触发。
-    keypress:按下有值的键时触发，即按下 Ctrl、Alt、Shift、Meta 这样无值的键，这个事件不会触发。对于有值的键，按下时先触发keydown事件，再触发这个事件
+    keypress:按下有值的键时触发,即按下 Ctrl、Alt、Shift、Meta 这样无值的键,这个事件不会触发。对于有值的键,按下时先触发keydown事件,再触发这个事件
     keyup:松开键盘时触发该事件
 
 username.onkeypress=function(e){
-    console.1og("keypress事件");
+    console.log("keypress事件");
 }
 
 event对象
-    keyCode:唯一标识
+    keyCode:唯一标识//每个字母都有对应的自然数
     var username =document.getElementById("username");
     username.onkeydown = function(e){
-        if(e.keycode === 13){
-            console.10g("回车");
+        if(e.keyCode === 13){
+            console.log("回车");
         }
     }
+    username.target.value:内容
+
+#事件类型之表单事件
+表单事件是在使用表单元素及输入框元素可以监听的一系列事件
+    input事件
+    select事件
+    Change事件
+    reset事件
+    submit事件
+
+input事件
+    input事件当 <input>、<selec>、<textarea>的值发生变化时触发。对于复选框(<input type=checkbox> )
+    或单选框(<inputtype=radio>),用户改变选项时,也会触发这个事件
+
+    input事件的一个特点,就是会连续触发,比如用户每按下一次按键,就会触发一次input事件。
+    var username= document.getElementById("username");
+    username.oninput =function(e){
+        console.log(e.target.value);
+    }
+
+select事件
+    select事件当在 <input>、<textarea>里面选中文本时触发
+    <input id="test" type="text" value="select me!" />
+    var elem=document.getElementById('test');
+    elem.addEventListener('select',function(e){
+        console.1og(e.type);//"select
+    },false)
 
 
-###################
+
+##################

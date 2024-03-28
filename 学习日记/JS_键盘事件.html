@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username">
+
+    <script>
+        var username = document.getElementById('username')
+        // username.onkeydown = function(e){
+        //     console.log(e.target.value);
+        // }
+
+        username.onkeydown = function(e){
+            console.log('按下了');
+        }
+
+        username.onkeyup = function(e){
+            console.log(e.target.value);
+        }
+
+        username.onkeypress = function(e){
+            console.log('keypress');
+        }
+
+        username.onkeyup = function(e){
+            console.log(e.keyCode);
+        }
+
+        username.onkeydown = function(e){
+        if(e.keyCode === 13){
+            console.log("回车");
+            }
+        }
+
+        username.oninput = function(e){
+            console.log(e.target.value);
+        }
+    </script>
+</body>
+</html>
