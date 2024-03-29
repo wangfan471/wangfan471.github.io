@@ -1216,9 +1216,32 @@ select事件
     <input id="test" type="text" value="select me!" />
     var elem=document.getElementById('test');
     elem.addEventListener('select',function(e){
-        console.1og(e.type);//"select
+        console.log(e.type);//"select
     },false)
 
+Change 事件
+    Change事件当 <input>、<select>、<textarea>的值发生变化时触发。它与input事件的最大不同,
+    就是不会连续触发,只有当全部修改完成时才会触发,回车、失去焦点触发
+    var email= document.getElementById("email");
+    email.onchange =function(e){
+        console.log(e.target.value);
+    }
 
+reset事件,submit 事件
+    这两个事件发生在表单对象 <form>上,而不是发生在表单的成员上。
+    reset事件当表单重置(所有表单成员变回默认值)时触发。
+    submit事件当表单数据向服务器提交时触发。注意,submit事件的发生对象是<orm> 元素,而不是<buton> 元素,
+    因为提交的是表单,而不是按钮
+    <form id="myForm" onsubmit="submitHandle">
+        <button onclick="resetHandle">重置数据</button>
+        <button>提交</button>
+    </form>
 
+    var myForm =document.getElementById("myForm")
+    function resetHandle(){
+        myForm.reset;
+    }
+    function submitHandle(){
+        console.log("提交");
+    }
 ##################
