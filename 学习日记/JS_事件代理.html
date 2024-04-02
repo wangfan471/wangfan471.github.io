@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        var ul1 = document.getElementById('ul1')
+        ul1.addEventListener('click',function(e){
+            if (e.target.tagName.toLowerCase() === 'li') {
+                console.log('点击了li');
+            }
+        })
+    </script>
+    
+</body>
+</html>
