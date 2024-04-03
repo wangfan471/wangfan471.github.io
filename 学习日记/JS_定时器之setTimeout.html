@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        setTimeout(function(){
+            console.log("定时器")
+        },3000)
+
+
+        var name = 'wcf'
+        var user = {
+            name:'jll',
+            getName:function(){
+                setTimeout(function(){
+                    console.log(this.name);
+                }, 3000);
+            }
+        }
+        user.getName()
+
+        var timeoutstop = setTimeout(function() {
+            console.log('停止定时器');
+        }, 3000);
+        clearTimeout(timeoutstop)
+    </script>
+
+</body>
+</html>
