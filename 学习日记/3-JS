@@ -690,7 +690,7 @@ var str ="hello"
 str.split("").reverse().join("")
 
 #数组方法_indexOf()
-indexo 方法返回给定元素在数组中第一次出现的位置,如果没有出现则返回 -1
+indexof 方法返回给定元素在数组中第一次出现的位置,如果没有出现则返回 -1
 var arr = ['a','b','c'];
 arr.indexof('b')// 1
 arr.indexof('y')// -1
@@ -1303,19 +1303,53 @@ reset事件,submit 事件
     clearTimeout(id);
 
 #定时器之setinterval
-setinterval函数的用法与 setTimeou 完全一致,区别仅仅在于 setintera! 指定某个任务每隔一段时间就执行一次,
+setinterval函数的用法与 setTimeout 完全一致,区别仅仅在于 setinteral 指定某个任务每隔一段时间就执行一次,
 也就是无限次的定时执行
     var timer=setInterval(function(){
         console.log(2);
     },1000)
 
 通过setInterval方法实现网页动画
-    <!DOCTYPE html>
-    <htm1 lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+    #div1{
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+            opacity: 1;
+        }
+    
+    <div id="div1"></div>
 
-###############
+    <script>
+        var div1 = document.getElementById('div1')
+        var opacity = 1
+        var animation1 = setInterval(function(){
+                if (opacity > 0) {
+                    opacity-=0.05
+                    div1.style.opacity=opacity
+                }else if(opacity<=0){
+                    opacity=1
+                    div1.style.opacity = opacity
+                }
+        },30)
+    </script>
+
+#防抖
+防抖严格算起来应该属于性能优化的知识,但实际上遇到的频率相当高,处理不当或者放任不管就容易引起浏
+览器卡死。
+从滚动条监听的例子说起
+    function showTop(){
+        var scrollTop =document.documentElement.scrollTop;
+        console.log('滚动条位置:' + scrollTop);
+    }
+    window.onscroll=showTop
+
+在运行的时候会发现存在一个问题:这个函数的默认执行频率,太!高!了!。高到什么程度呢?以chrome
+为例,我们可以点击选中一个页面的滚动条,然后点击一次键盘的【向下方向键】,会发现函数执行了8-9
+次!
+
+然而实际上我们并不需要如此高频的反馈,毕竟浏览器的性能是有限的,不应该浪费在这里,所以接着讨论如何优化这种场景。
+
+基于上述场景,首先提出第一种思路:在第一次触发事件时,不立即执行函数,而是给出一个期限值比如 
+
+
+##############
