@@ -1,0 +1,121 @@
+# 命令行工具
+在正式讲解ES6新特性之前,我们需要了解一些命令行工具,在日后的课程中,我们会经常用到命令行
+常用命令行工具有两种
+    CMD 命令行工具
+    Powershell 命令行工具
+
+CMD命令行
+    打开命令行窗口
+        win:左下角开始,找到运行,点击,输入cmd,回车
+        win: win+r 快速打开命令行窗口
+        mac:command+空格,输入 terminal
+    选择盘符:盘符名加冒号
+    查看盘符及目录下文件与文件夹win:dir mac:ls
+    清空命令行信息:win:cls mac:clear
+    进入文件夹或目录:cd 文件夹名称
+    返回到上一级目录:cd ../
+    快速补全目录或文件夹名称:tab
+    创建文件夹: mkdir 文件夹名称
+    查看历史输入过的命令:上下按键
+
+Powershell
+    打开方式
+        在开始位置搜索 Powershe 打开
+        在对应目录按住 shift +右键,打开
+    其他保持一直
+
+#ECMAScript 6简介
+ECMAScript的关系和JavaScript
+    ECMAScript 和lavaScript 的关系是,前者是后者的规格,后者是前者的一种实现,常场合,这两个词是可以互换的。
+
+名称详解
+    ECMAScript 6(以下简称 ES6)是lavaScript 语言的标准,在 2015年6月发布。它的目标,是使得JavaScript 语言可以用来编写复杂的大型应用程序,成为企业级开发语言。
+
+ES6带来的新特性
+    let 和 const 命令
+    变量的解构赋值
+    字符串扩展
+    函数扩展
+    对象扩展
+    数组扩展
+    运算符扩展
+    Promise对象
+    Class
+    Class继承
+
+#Nodejs环境安装
+Nodejs简介
+    Nodejs诞生于2009年,主攻服务器方向,使得利用 Javascript 也可以完成服务器代码的编写
+
+Nodejs安装
+    Nodejs官网https://nodejs.org/en/
+    Nodejs的安装与一般软件一样
+    C:\Users\王超凡>node -v
+    v20.12.1
+    C:\Users\王超凡>npm -v // npm node package manager
+    10.5.0
+
+大量的库
+    在安装 Nodejs 的同时,会附带一个 npm 命令,npm 是Node的包管理工具,这样正是接下来我们要用到的
+    npm 的简单结构有助于 Node.js 生态系统的激增,现在 npm 仓库托管了超过 1,000,000 个可以自由使用的开源库包
+
+npm 镜像
+    由于服务器在国外,所以下载速度比较慢,我们可以用国内的镜像
+    阿里镜像地址
+    https://npmmirror.com/
+    在命令行运行如下命令即可
+    npm install -g cnpm --registry=https://registry.npmmirror.com
+
+#let命令
+ES6 新增了let 命令用来声明变量。它的用法类似于 var,但是所声明的变量,只在lt命令所在的代码块内有效。
+
+let块级作用域
+    {
+        let wcf =10;//花括号内起作用
+        var sxt = 1;//函数内起作用
+    }
+    wcf //ReferenceError:wcf is not defined
+    sxt // 1
+
+for 循环的计数器,就很合适使用let 命令
+    for (let i=0 ; i<10 ; i++){
+
+for 循环的计数器,就很合适使用let 命令
+    for(let i=0 ; i<10 ; i++){
+        //.....
+    }
+    console.log(i);
+    // ReferenceError:i is not defined
+
+对比 var 和let 在循环中的应用
+    var a = [];
+    for(var i=0;i<10;i++){
+        a[i]=function(){
+            console.1og(i);
+        }:
+    }
+    a[6]();// 10
+
+上面代码,输出的10,而我们期待的是6
+    var a=[];
+    for(let i=0;i<10;i++){
+        a[i]=function(){
+            console.1og(i);
+        }
+    }
+    a[6]();// 6
+    上面代码,输出的6
+
+let不允许在相同作用域内，重复声明同一个变量。
+    // 报错
+    function func(){
+        let a = 10;
+        var a= 1;
+    }
+    // 报错
+    function func(){
+    let a= 10;
+    let a= 1;
+    }
+    
+#################################################################

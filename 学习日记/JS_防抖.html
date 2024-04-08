@@ -18,7 +18,18 @@
     <h3>aa</h3>
 
     <script>
-        window.onscroll = scrollhandle
+        function debounce(fn,delay) {
+            var timer = null
+            return function () {
+                if (timer) {
+                    clearTimeout(timer)
+                }
+                timer = setTimeout(fn,delay)
+            }
+        }
+        
+        // 滚动监听
+        window.onscroll = debounce(scrollhandle,200)
         // function scrollhandle(){
         //     console.log('拖动了');
         // }

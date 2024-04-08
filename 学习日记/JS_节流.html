@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h3>aa</h3>
+    <h3>aa</h3>
+    <h3>aa</h3>
+    <h3>aa</h3>
+    <h3>aa</h3>
+
+    <script>
+        function throttle(fn,delay) {
+            var valid  = true
+            return function () {
+                if (!valid) {
+                    return false
+                }
+                valid = false
+                setTimeout(function () {
+                    fn();
+                    valid = true;
+                },delay)
+            }
+        }
+
+        window.onscroll = throttle(scrollHandle,2000)
+        function scrollHandle() {
+            var scrollTop = document.documentElement.scrollTop
+            console.log(scrollTop);
+        }
+    </script>
+</body>
+</html>
