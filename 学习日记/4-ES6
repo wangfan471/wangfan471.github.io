@@ -67,7 +67,7 @@ npm 镜像
     npm install -g cnpm --registry=https://registry.npmmirror.com
 
 #let命令
-ES6 新增了let 命令用来声明变量。它的用法类似于 var,但是所声明的变量,只在lt命令所在的代码块内有效。
+ES6 新增了let 命令用来声明变量。它的用法类似于 var,但是所声明的变量,只在let命令所在的代码块内有效。
 
 let块级作用域
     {
@@ -112,10 +112,180 @@ let不允许在相同作用域内,重复声明同一个变量。
         let a = 10;
         var a= 1;
     }
-    // 报错
-    function func(){
-    let a= 10;
-    let a= 1;
-    }
+
     
-#################################################################
+#const
+const 声明一个只读的常量。一旦声明,常量的值就不能改变
+    const PI = 3.1415;
+    PI // 3.14152
+    PI = 3;
+    // TypeError:Assignment to constant variable.
+
+const声明的变量不得改变值,这意味着,const一旦声明变量,就必须立即初始化,不能留到以后赋值
+    const foo;
+    /SyntaxError: Missing initializer in const declaration
+
+const 的作用域与let命令相同:只在声明所在的块级作用域内有效
+    if(true){
+        const MAX=5;
+    }
+    MAX //Uncaught ReferenceError:MAx is not defined
+
+const 命令声明的常量也是不提升
+    if(true){
+        console.log(MAX);
+        const jll = 5
+    }
+    //ReferenceError Cannot access 'jll' before initialization
+
+const 声明的常量,也与let 一样不可重复声明
+    var wcf = 10;
+    let jll = 10;
+    // 以下两行都会报错
+    const wcf = 10
+    const jll = 10;
+    //Uncaught SyntaxError: Identifier 'wcf' has already been declared
+#对象解构赋值
+解构可以用于对象
+    let {name,age}= {name:"iwen",age:20};
+
+温馨提示
+    对象的属性没有次序,变量必须与属性同名,才能取到正确的值
+
+        let {age,name}= {name:"iwen",age:20};
+        age // 202
+
+        let {sex,age,name}={name:"iwen",age:20};
+        sex //undefined
+
+    对象的解构赋值,可以很方便地将现有对象的方法,赋值到某个变量
+        let { random,floor }= Math;
+        let { log }= console;
+
+    注意事项,如果要将一个已经声明的变量用于解构赋值,必须非常小心
+        let hello ="Hello";
+        let { hello }= {hello:"hello"}; // 报错
+        let hello ="Hello";
+        ({ hello }= {hello:"hello"});// 正确
+
+#字符串扩展
+字符串Unicode 表示法
+    ES6 加强了对 Unicode 的支持,允许采用 \uxxx 形式表示一个字符,其中 xxx 表示字符的 Unicode 码点。
+
+Unicode
+    统一码(Unicode),也叫万国码、单一码,是计算机科学领域里的一项业界标准,包括字符集、编码方案等。
+    Unicode是为了解决传统的字符编码方案的局限而产生的,它为每种语言中的每个字符设定了统一并且唯一的二进制编码,
+    以满足跨语言、跨平台进行文本转换、处理的要求。
+
+        "\u0061"
+        //"a"
+
+字符串遍历器接口
+    for.of循环遍历
+        for(let i of 'wcf'){
+            console.1og(i);
+        }
+
+模板字符串
+    模板字符串(template string)是增强版的字符串,用反引号(`)标识。它可以当作普通字符串使用,也可以用来定义多行字符串,
+    或者在字符串中嵌入变量。
+        let url='www.wcf.com'
+        let hl ='<a href=''+ url+''>wcf</a>'
+        let h2 =`<a href='${url}'>wcf</a>`
+
+#字符串新增方法
+includes(),startsWith(),endsWith()
+    传统上,JavaScript 只有 indexof方法,可以用来确定一个字符串是否包含在另一个字符串中。ES6 又提供了三种新方法。
+        includes():返回布尔值,表示是否找到了参数字符串
+        startsWith():返回布尔值,表示参数字符串是否在原字符串的头部
+        endsWith():返回布尔值,表示参数字符串是否在原字符串的尾部
+            let s='Hello world!';
+            s.startswith('Hello')// true
+            s.endswith('!')// true
+            s.includes('o')// true
+
+这三个方法都支持第二个参数,表示开始搜索的位置
+
+repeat()
+    repeat 方法返回一个新字符串,表示将原字符串重复n次。
+        'x'.repeat(3)//'xxx'
+        'hel1o'.repeat(2)// "hellohello"
+        'na'.repeat(0)//""
+
+padstart(),padEnd()
+    ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度,会在头部或尾部补全。 padstart 用于头部补全, padEnd() 用于尾部补全。
+        'x'.padstart(5,'ab')//'ababx'
+        'x'.padstart(4,'ab')//'abax'
+        'x'.padEnd(5,'ab')//'xabab'
+        'x'.padEnd(4,'ab')//'xaba'
+
+trimstart()trimEnd()
+    ES2019对字符串实例新增了 trimstart() 和 timEnd() 这两个方法。它们的行为与 tim0 一致, trimstart() 消除字符串头部的空格, 
+    trimEnd() 消除尾部的空格。它们返回的都是新字符串,不会修改原始字符串。
+        const s='  wcf  '
+        s.trim()//"wcf"
+        s.trimstart()// 'wcf  '
+        s.trimEnd()//'  wcf'
+
+at()
+    at() 方法接受一个整数作为参数,返回参数指定位置的字符,支持负索引(即倒数的位置)。
+        const str ='hello';
+        str.at(1)//"e"
+        str.at(-1)//"o"
+
+温馨提示
+    如果参数位置超出了字符串范围,at() 返回 undefned
+
+#数组扩展_扩展运算符
+扩展运算符(spread)是三个点(…)。将一个数组转为用逗号分隔的参数序列
+    console.log(...[1, 2, 3])
+    // 1 2 3
+    console.log(1,...[2,3,4],5)
+    //1 2 3 4 5
+
+替代函数的 apply 方法
+    由于扩展运算符可以展开数组,所以不再需要 apply 方法,将数组转为函数的参数了
+        //ES5 的写法
+        Math.max.apply(nu11,[14,3,77])
+
+        // ES6 的写法
+        Math.max(...[14,3,77])
+
+        //等同于
+        Math.max(14,3,77);
+
+合并数组
+    扩展运算符提供了数组合并的新写法
+        const arrl =['a','b'];
+        const arr2 =['c'];
+        const arr3 =['d','e'];
+
+        //ES5 的合并数组
+        arr1.concat(arr2,arr3);
+        // ['a','b','C','d','e']
+        
+        //ES6 的合并数组
+        [...arr1,...arr2,...arr3]
+        //['a','b','c','d','e']
+
+#数组扩展 新增方法
+Array.from()
+    Array.from 方法用于将类数组转为真正的数组
+
+温馨提示
+    常见的类数组有三类:
+        arguments
+        元素集合
+        类似数组的对象
+
+arguments
+    function add(){
+        Let collect= Array.from(arguments);
+        collect.push(40);
+        console.log(collect);
+    }
+
+
+
+
+###########################################################

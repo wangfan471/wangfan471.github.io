@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="" id="id1"></a>
+    <script>
+        console.log('\u0061');
+
+        var str1 = 'wcf'
+        for(let i= 0 ; i < str1.length ; i++){
+            console.log(str1[i]);
+        }
+        for(let i of str1){
+            console.log(i);
+        }
+
+        var href1 = 'fanfanlanlan.cn'
+        var text1 = 'fanfanlanlan'
+        let h1 = '<a href="'+href1+'">'+text1+'</a>'
+        let h2 = `<a href="${href1}">${text1}</a>`
+        var id1 = document.getElementById('id1')
+        id1.innerHTML = h1
+
+    </script>
+</body>
+</html>

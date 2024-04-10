@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var user={
+            name : 'wcf',
+            age : 10
+        }
+        console.log(user.name);
+        let {name , age}  = user
+        console.log(name,age);
+
+        const{log} = console
+        log(age)
+
+        log(Math.random())
+        const{random , floor} = Math
+        log(random(),floor())
+
+        let hello ="Hello";
+        // let { hello }= {hello:"hello"}; // 报错
+        // let hello ="Hello";
+        ({ hello }= {hello:"hello"});// 正确
+        
+
+        
+
+
+
+    </script>
+</body>
+</html>
