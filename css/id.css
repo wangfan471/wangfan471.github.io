@@ -6,19 +6,31 @@
 #Static-panels {
     width: 25%;
     height: 50%;
-    background-color: antiquewhite;
+    background-color: rgb(250, 231, 215);
     position: fixed;
     clear: both;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: 12%;
 }
 
 #Navigation-bar {
     position: fixed;
     width: 100%;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     
     
+}
+
+#exhibit {
+    width: 50%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    margin-top: 5%;
+    margin-left: 48%;
+    /* padding: 2%; */
+    overflow: auto;
+
 }
 
 .ul1 {
@@ -32,4 +44,10 @@
     display: inline-block;
     position: relative;
 
+}
+
+.exhibit{
+    height: 22%;
+    margin-top: 2%;
+    background-color: rgb(250, 231, 215);
 }
