@@ -1,0 +1,91 @@
+
+
+
+/* 初始化 */
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+body{
+    /* position: fixed; */
+}
+
+/* 粒子动效背景 */
+#particles-js{
+    float: left;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #d3b485;
+    background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    line-height: 0%; /*多出滚动条 overflow：hidden也行*/
+}
+
+/* 导航栏 */
+#Navigation-bar {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(255, 255, 255,0);
+    
+}
+.ul1 {
+    text-align: right;
+
+}
+
+.ul1>li {
+    margin-top: 1%;
+    margin-right: 7%;
+    display: inline-block;
+    position: relative;
+}
+.a1:link,.a1:visited{
+    text-decoration: none;
+    color: rgb(0, 0, 0) ;
+}
+
+
+/* 展栏1 */
+#exhibit1 {
+    width: 35%;
+    height: 90%;
+    background-color: rgb(250, 231, 215,0.5);
+    position: fixed;
+    clear: both;
+    margin-left: 3%;
+    margin-top: 5%;
+}
+#photo {
+
+}
+
+/* 展栏2 */
+#exhibit2 {
+    width: 50%;
+    height: 90%;
+    background-color: rgb(255, 255, 255,0);
+    position: fixed;
+    margin-top: 5%;
+    margin-left: 48%;
+    /* padding: 2%; */
+    overflow: auto;
+}
+#exhibit2::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+.exhibit2{
+    height: 22%;
+    margin-top: 2%;
+    background-color: rgb(250, 231, 215,0.5);
+    border-radius:15px 0 0 15px;
+    padding: 2%;
+    
+}
+
+

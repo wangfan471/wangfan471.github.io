@@ -1,0 +1,145 @@
+# div 添加滚动条
+https://www.runoob.com/w3cnote/div-scroll.html
+div 添加滚动条只需要指定 overflow 属性为 auto 即可，以下实例设置了 div 水平滚动条：
+    <div style="height:300px;width:70px;overflow:auto;background:#EEEEEE;"></div>
+值	描述
+visible	默认值。内容不会被修剪，会呈现在元素框之外。
+hidden	内容会被修剪，并且其余内容是不可见的。
+scroll	内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+auto	如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+inherit	规定应该从父元素继承 overflow 属性的值。
+当内容超出容器时，容器会出现滚动条。虽然浏览器自带的滚动条有时无法满足审美要求，但我们可以通过 CSS 伪类来实现对滚动条的自定义。
+
+以下是一个示例，展示如何自定义 `div` 元素的滚动条样式：
+
+```html
+<div class="test test-1">
+  <div class="scrollbar"></div>
+</div>
+```
+
+```css
+.test {
+  width: 50px;
+  height: 200px;
+  overflow: auto;
+  float: left;
+  margin: 5px;
+  border: none;
+}
+
+.scrollbar {
+  width: 30px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/* 滚动条整体样式 */
+.test-1::-webkit-scrollbar {
+  width: 10px; /* 横向滚动条的尺寸 */
+  height: 1px; /* 纵向滚动条的尺寸 */
+}
+
+/* 滚动条滑块部分 */
+.test-1::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #535353;
+}
+
+/* 滚动条轨道部分 */
+.test-1::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #ededed;
+}
+```
+
+效果如下：
+- 改变滚动条的宽度：在 `::-webkit-scrollbar` 中改变即可。
+- 改变滚动条滑块的圆角：在 `::-webkit-scrollbar-thumb` 中改变。
+- 改变轨道的圆角：在 `::-webkit-scrollbar-track` 中改变。
+
+此外，滚动条的滑块不仅可以填充颜色，还可以填充图片。例如：
+
+```html
+<div class="test test-5">
+  <div class="scrollbar"></div>
+</div>
+```
+
+```css
+/* 滚动条整体样式 */
+.test-5::-webkit-scrollbar {
+  width: 10px;
+  height: 1px;
+}
+
+/* 滚动条滑块部分 */
+.test-5::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #f90;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+/* 滚动条轨道部分 */
+.test-5::-webkit-scrollbar-track {
+  background: #ededed;
+}
+```
+
+以上代码可以实现自定义滚动条的样式。如果文档中会有多个滚动条出现，且希望所有的滚动条样式是一样的，那么伪元素前面不需要加上 class、id、标签名等之类的任何东西¹³⁴⁵。
+
+# 背景粒子动效
+Particles.js库
+https://www.bootstrapmb.com/h5bg
+https://www.jianshu.com/p/ae649765aea9
+
+# div（高宽100%）背景高度不对问题，多出滚动条问题
+背景铺不满，原因是html，body高度不是100%
+html,body{
+    height: 100%;
+}
+line-height: 0%; /*多出滚动条 overflow：hidden也行*/
+
+# 不同设备盒子、字体比例问题
+
+适应不同屏幕的宽度
+https://blog.csdn.net/u013233097/article/details/99691606
+<script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
+
+# 手机端禁止刷新
+https://zhuanlan.zhihu.com/p/86032495
+body{
+   oveflow: hidden;
+}
+
+# 音频
+
+# CSS 链接
+https://www.w3school.com.cn/css/css_link.asp
+a标签的css样式
+
+
+

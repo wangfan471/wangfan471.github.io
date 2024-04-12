@@ -4,30 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/id.css">
-    <style>
-       
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index1.css">
 </head>
 <body>
+    <!-- 粒子动效库 -->
+    <div id="particles-js" ></div>
+    <script src="js/particles.js-master/particles.js"></script>
+    <script src="js/particles.js-master/app.js"></script>
+
+
+    <!-- 导航栏 -->
     <div id="Navigation-bar">
         <ul class="ul1">
-            <li>兴趣爱好</li>
-            <li>学习总结</li>
-            <li>项目经历</li>
-            <li>工作文件</li>
+            <li><a href="./index.html" class="a1" id="index">主页</a></li>
+            <li><a href="./hobby.html" class="a1" id="hobby">兴趣爱好</a></li>
+            <li><a href="./knowledge.html" class="a1" id="knowledge">学习总结</a></li>
+            <li><a href="./Project-Experience.html" class="a1" id="Project-Experience">项目经历</a></li>
+            <li><a href="./Important-documents.html" class="a1" id="Important-documents">工作文件</a></li>
         </ul>
     </div>
 
-    <div id="Static-panels">个人介绍</div>
-
-    <div id="exhibit">
-        <div class="exhibit" id="hobby">hobby</div>
-        <div class="exhibit" id="knowledge">knowledge</div>
-        <div class="exhibit" id="Project-Experience">Project-Experience</div>
-        <div class="exhibit" id="Important-documents">Important-documents</div>
-        <div class="exhibit"></div>
+    <!--展栏1 -->
+    <div id="exhibit1">
+        <div class="photo" id="photo"></div>
+        <div class="music" id="music"></div>
     </div>
+
+    <!-- 展栏2 -->
+    <div id="exhibit2">
+        <div class="exhibit2" id="hobby">hobby</div>
+        <div class="exhibit2" id="knowledge">knowledge</div>
+        <div class="exhibit2" id="Project-Experience">Project-Experience</div>
+        <div class="exhibit2" id="Important-documents">Important-documents</div>
+        <div class="exhibit2"></div>
+    </div>
+
+    
+    <!-- 不同设备盒子、字体比例问题 -->
+    <script type="text/javascript">
+        var phoneWidth =  parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
 
 </body>
 </html>
