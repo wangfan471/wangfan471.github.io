@@ -9,9 +9,7 @@
 html,body{
     height: 100%;
 }
-body{
-    /* position: fixed; */
-}
+
 
 /* 粒子动效背景 */
 #particles-js{
@@ -52,27 +50,70 @@ body{
 
 /* 展栏1 */
 #exhibit1 {
+    left: 3%;
+    top: 5%;
     width: 35%;
     height: 90%;
-    background-color: rgb(250, 231, 215,0.5);
+    background-color: rgb(250, 231, 215,0);
     position: fixed;
     clear: both;
-    margin-left: 3%;
-    margin-top: 5%;
 }
 #photo {
+    height: 45%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(250, 231, 215,0.5);
+    border-radius:15px 15px 15px 15px;
+}
+
+/* 音乐面板 */
+#music{
+    height: 45%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(250, 231, 215,0.5);
+    border-radius:15px 15px 15px 15px;
+}
+
+/* 音乐信息 */
+#music-info{
+    height: 79%;
+    border-radius:15px 15px 15px 15px;
+    box-shadow: 0 10px 20px 0px rgb(197, 166, 140,0.5);
+}
+#music-text{
 
 }
+#music-text>div{
+text-align: center;
+}
+/* 音乐控制 */
+#music-panel{
+    position: relative;
+    height: 13%;
+    margin-top: 2%;
+    text-align: center;
+    padding-top: 7%;
+    background-color: rgb(255, 255, 255,0.3);
+    border-radius:15px 15px 15px 15px;
+    box-shadow: 0 10px 20px 0px rgb(197, 166, 140,0.5);
+}
+#music-panel span{
+    cursor: pointer;
+}
+#music-panel span:hover{
+    color: rgb(255, 255, 255);
+}
+
 
 /* 展栏2 */
 #exhibit2 {
-    width: 50%;
+    left: 50%;
+    top: 5%;
+    width: 48%;
     height: 90%;
     background-color: rgb(255, 255, 255,0);
     position: fixed;
-    margin-top: 5%;
-    margin-left: 48%;
-    /* padding: 2%; */
     overflow: auto;
 }
 #exhibit2::-webkit-scrollbar{
@@ -81,11 +122,10 @@ body{
 }
 .exhibit2{
     height: 22%;
-    margin-top: 2%;
+    margin-top: 10px;
     background-color: rgb(250, 231, 215,0.5);
     border-radius:15px 0 0 15px;
-    padding: 2%;
-    
+    padding: 10px;
 }
 
 

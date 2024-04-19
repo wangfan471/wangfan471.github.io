@@ -859,19 +859,15 @@ div{
 
 阴影
     box-shadow 向框添加一个或多个阴影。
-box-shadow:h-shadow v-shadow blur color;
-值;描述
-h-shadow;必选,水平阴影的位置(可以是负数,另一个方向)
-w-shadow;必选,垂直阴影的位置
-blur;可选,模糊距离
-color;可选,阴影的颜色
+    五个值,可以box-shadow:0 0 0 0 green;打开后台调试
+
 
 .box {
     width:200px;
     height: 200px;
     background-color:#8ac007;
     margin:50px;
-    box-shadow:10px 10px 5px green;
+    box-shadow:0 10px 10px 5px green;
 }
 
 #动画

@@ -141,5 +141,19 @@ body{
 https://www.w3school.com.cn/css/css_link.asp
 a标签的css样式
 
+# CSS cursor属性
+https://www.w3school.com.cn/jsref/prop_style_cursor.asp
+cursor 属性设置或返回要为鼠标指针显示的光标类型。
+pointer指示链接
 
+#CSS 选择器
+a:hover 选择鼠标指针位于其上的链接。
+p::after	在每个 <p> 的内容之后插入内容。
+p::before	在每个 <p> 的内容之前插入内容。
+
+#CSS onclick
+https://www.w3school.com.cn/jsref/event_onclick.asp
+<button onclick="myFunction()">Click me</button>
+这里直接形成了一个函数，js里可以绑定
+https://blog.csdn.net/nitongxy/article/details/74906344
 

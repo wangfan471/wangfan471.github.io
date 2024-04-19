@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/index.css?v=1.0.0">
     <link rel="stylesheet" href="./css/index1.css?v=1.0.0">
+    <link rel="stylesheet" href="./css/music/iconfont.css">
+
 </head>
 <body>
     <!-- 粒子动效库 -->
@@ -27,8 +29,40 @@
 
     <!--展栏1 -->
     <div id="exhibit1">
-        <div class="photo" id="photo"></div>
-        <div class="music" id="music"></div>
+        <div id="music">
+            <div id="music-info">
+                <div id="music-text" >
+                    <div id="music-title">
+                        <h1>下雨天</h1>
+                    </div>
+                    <div id="author">
+                        <p>南拳妈妈</p>
+                    </div>
+                    <div id="music-lyrics">
+                        <p>下雨天了怎么办我好想你</p>
+                    </div>
+                    <div id="progress">
+                        <div id="music-progress-time">
+                            <span>00:00</span>
+                            <span>05:39</span>
+                        </div>
+                        <div id="music-progress-bar">
+                            <div id="music-progress-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="music-panel">
+                <span class="iconfont icon-shangyishouge" id="icon-shangyishouge"  onclick=""></span>
+                <span class="iconfont icon-bofang" id="icon-bofang"  onclick="bofang()"></span>
+                <span class="iconfont icon-xiayishou" id="icon-xiayishou"  onclick=""></span>
+                <span class="iconfont icon-guanbishengyin" id="icon-guanbishengyin"   onclick=""></span>
+                <span class="iconfont icon-xunhuanbofang" id="icon-xunhuanbofang"  onclick=""></span>
+                <span class="iconfont icon-gedan" id="icon-gedan"  onclick=""></span>
+                <span class="iconfont icon-xiazaibendi" id="icon-xiazaibendi"  onclick=""></span>
+            </div>
+        </div>
+        <div id="photo"></div>
     </div>
 
     <!-- 展栏2 -->
@@ -57,6 +91,7 @@
             document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
         }
     </script>
-
+    <!-- 音乐面板功能 -->
+    <script type="text/javascript" src="./js/music-contro.js"></script>
 </body>
 </html>
