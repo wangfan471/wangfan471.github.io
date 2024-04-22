@@ -9,7 +9,9 @@
 html,body{
     height: 100%;
 }
-
+ul>li{
+    list-style-type: none;
+}
 
 /* 粒子动效背景 */
 #particles-js{
@@ -78,14 +80,81 @@ html,body{
 /* 音乐信息 */
 #music-info{
     height: 79%;
+    width: 100%;
     border-radius:15px 15px 15px 15px;
     box-shadow: 0 10px 20px 0px rgb(197, 166, 140,0.5);
 }
 #music-text{
-
+    width: 100%;
+    height: 100%;
+    display: none;
+    display: block;
+    
 }
+#music-img{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    display: none;
+    /* display: block; */
+    background-image: url(../image/music-img/DM_20240422103032_001.jpg);
+}
+#music-list{
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* display: block; */
+}
+
 #music-text>div{
-text-align: center;
+    text-align: center;
+}
+
+#music-progress{
+    position: relative;
+    top: 180px;
+}
+#music-progress-time{
+    display: flex;
+    text-align: center;
+    color: #f83ed0;
+    justify-content: space-between;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+#music-progress-bar{
+    background-color: #beb7ac;
+    height: 3px;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 3px;
+}
+#music-progress-line{
+    height: 100%;
+    width: 50%;
+    background-color: #f83ed0;
+}
+
+#music-list-top{
+    width: 100%;
+    height: 15%;
+}
+#music-list-form{
+    width: 100%;
+    height: 80%;
+    overflow: scroll;
+}
+#music-list-form::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+
+#music-list-form span{
+    cursor: pointer;
+    
+}
+#music-list-form span:hover{
+    color: rgb(255, 255, 255);
 }
 /* 音乐控制 */
 #music-panel{
@@ -93,7 +162,7 @@ text-align: center;
     height: 13%;
     margin-top: 2%;
     text-align: center;
-    padding-top: 7%;
+    padding-top: 4%;
     background-color: rgb(255, 255, 255,0.3);
     border-radius:15px 15px 15px 15px;
     box-shadow: 0 10px 20px 0px rgb(197, 166, 140,0.5);

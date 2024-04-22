@@ -31,17 +31,18 @@
     <div id="exhibit1">
         <div id="music">
             <div id="music-info">
+                <div id="music-img"></div>
                 <div id="music-text" >
                     <div id="music-title">
                         <h1>下雨天</h1>
                     </div>
-                    <div id="author">
+                    <div id="music-author">
                         <p>南拳妈妈</p>
                     </div>
                     <div id="music-lyrics">
                         <p>下雨天了怎么办我好想你</p>
                     </div>
-                    <div id="progress">
+                    <div id="music-progress">
                         <div id="music-progress-time">
                             <span>00:00</span>
                             <span>05:39</span>
@@ -49,6 +50,19 @@
                         <div id="music-progress-bar">
                             <div id="music-progress-line"></div>
                         </div>
+                    </div>
+                </div>
+                <div id="music-list">
+                    <div id="music-list-top">
+                        <div id="music-list-title">歌曲列表</div>
+                        <div id="music-list-back"></div>
+                    </div>
+                    <div id="music-list-form">
+                        <ul id="music-list-content" >
+                            <li>
+                                <span>01. 下雨天 - 南拳妈妈</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -93,5 +107,32 @@
     </script>
     <!-- 音乐面板功能 -->
     <script type="text/javascript" src="./js/music-contro.js"></script>
+
+    <!-- 加载音乐列表信息 -->
+    <script type="text/javascript" src="./js/jquery/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="./music.json"></script>
+    <script>
+        // 空列表等待传入
+        var musiclist = []
+        // 当前音乐
+        var initmusic = 0
+        $.ajax({
+            type: "GET",
+            url: "./music.json",
+            dataType: "json",
+            success: function(data){
+                musiclist = data
+                console.log(data);
+                render(data[initmusic]);
+            },
+        })
+        // 设置标签对应的内容 对号入座
+        function render(data){
+            console.log(data);
+            $("#music-title").html(data.name)
+            $("#music-author").html(data.singer)
+        }
+
+    </script>
 </body>
 </html>

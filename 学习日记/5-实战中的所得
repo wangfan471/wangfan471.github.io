@@ -157,3 +157,32 @@ https://www.w3school.com.cn/jsref/event_onclick.asp
 这里直接形成了一个函数，js里可以绑定
 https://blog.csdn.net/nitongxy/article/details/74906344
 
+# AJAX
+创建 XMLHttpRequest 对象
+  variable = new XMLHttpRequest();
+
+定义回调函数
+  回调函数是作为参数传递给另一个函数的函数。
+  在这种情况下，回调函数应包含响应准备就绪时要执行的代码
+  xhttp.onload = function() {
+    // 当响应准备就绪时要做什么
+  }
+
+发送请求
+  如需向服务器发送请求，您可以使用 XMLHttpRequest 对象的 open() 和 send() 方法：
+  xhttp.open("GET", "ajax_info.txt");
+  xhttp.send();
+
+  $.ajax({          
+       	 url:"发送请求（提交或读取数据）的地址", 
+         dataType:"预期服务器返回数据的类型",  
+         type:"请求方式", 
+         async:"true/false",
+         data:{发送到/读取后台（服务器）的数据},
+         success:function(data){请求成功时执行},      
+         error:function(){请求失败时执行}
+});
+
+
+#jquery
+https://blog.csdn.net/qq_40976321/article/details/90552297
