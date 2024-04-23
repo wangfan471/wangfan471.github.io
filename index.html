@@ -36,14 +36,16 @@
                     <img src="./image/music-img/下雨天-南拳妈妈.jpg" alt="下雨天-南拳妈妈" width="100%" height="100%">
                 </div>
                 <div class="music-text" id="music-text" style="display: block;">
-                    <div id="music-title">
-                        <h1>下雨天</h1>
-                    </div>
-                    <div id="music-author">
-                        <p>南拳妈妈</p>
-                    </div>
-                    <div id="music-lyrics">
-                        <p>下雨天了怎么办我好想你</p>
+                    <div id="textpart">
+                        <div id="music-title">
+                            <h1>下雨天</h1>
+                        </div>
+                        <div id="music-author">
+                            <p>南拳妈妈</p>
+                        </div>
+                        <div id="music-lyrics">
+                            <p>下雨天了怎么办我好想你</p>
+                        </div>
                     </div>
                     <div id="music-progress">
                         <div id="music-progress-time">
@@ -70,13 +72,11 @@
                 </div>
             </div>
             <div id="music-panel">
-                <span class="iconfont icon-shangyishouge" id="icon-shangyishouge"  ></span>
-                <span class="iconfont icon-bofang" id="icon-bofang" ></span>
-                <span class="iconfont icon-xiayishou" id="icon-xiayishou"  ></span>
-                <span class="iconfont icon-guanbishengyin" id="icon-guanbishengyin"   ></span>
-                <span class="iconfont icon-xunhuanbofang" id="icon-xunhuanbofang"  ></span>
+                <span class="iconfont icon-shangyishouge" id="icon-shangyishouge" style="margin-right: 2%;" ></span>
+                <span class="iconfont icon-bofang" id="icon-bofang" style="margin-right: 2%;"></span>
+                <span class="iconfont icon-xiayishou" id="icon-xiayishou" style="margin-right: 10%;" ></span>
+                <span class="iconfont icon-guanbishengyin" id="icon-guanbishengyin"  style="margin-right: 5%;" ></span>
                 <span class="iconfont icon-gedan" id="icon-gedan"  ></span>
-                <span class="iconfont icon-xiazaibendi" id="icon-xiazaibendi"  ></span>
             </div>
         </div>
         <div id="photo"></div>
@@ -125,13 +125,11 @@
             dataType: "json",
             success: function(data){
                 musiclist = data
-                console.log(data);
                 render(data[initmusic]);
             },
         })
         // 设置标签对应的内容 对号入座
         function render(data){
-            console.log(data);
             $("#music-title").html(data.name)
             $("#music-author").html(data.singer)
             $("#endtime").html(data.time)
@@ -139,25 +137,37 @@
             $('audio').attr('src',data.url)
         }
         // 给播放按钮绑定点击事件
-        $('.icon-bofang').on("click",function(){
-            console.log(111);
-            console.log($(this).hasClass("icon-bofang"));
+        $('#icon-bofang').on("click",function(){
             //修改播放暂停图标
             if ($(this).hasClass("icon-bofang")) {
-                $(this).removeClass('icon-bofang').addClass('icon-zanting');
                 // 播放音乐
                 $("audio").get(0).play()
+                console.log(Boolean($("audio").get(0).currentTime));
+                $(this).removeClass().addClass('iconfont icon-huanchong')
+                var timesRun = 0;
+                var interval =setInterval(function(){
+                    timesRun+=1
+                    if(timesRun === 15){    
+                        clearInterval(interval);    
+                    }
+                    console.log(timesRun);
+                    if (Boolean($("audio").get(0).currentTime)) {
+                        clearInterval(interval);
+                    }
+                    console.log($("audio").get(0).currentTime);
+                    console.log(Boolean($("audio").get(0).currentTime));
+                }, 1000);
+                $(this).removeClass().addClass('iconfont icon-zanting')
             }else{
-                $(this).removeClass('icon-zanting').addClass('icon-bofang')
+                $(this).removeClass().addClass('iconfont icon-bofang')
                 // 暂停音乐
                 $("audio").get(0).pause()
             }
         })
+        
+        
         // 给歌单按钮绑定点击事件
         $(".icon-gedan").on("click",function(){
-            console.log(222);
-            console.log($('.music-text').attr('style'));
-            console.log($('.music-text').attr('style') == 'display: block;');
             if($('.music-text').attr('style') == 'display: block;'){
                 $('.music-text').attr('style','display: none;') 
                 $('.music-list').attr('style','display: block;')

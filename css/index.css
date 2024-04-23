@@ -13,7 +13,9 @@ html,body{
 ul>li{
     list-style-type: none;
 }
-
+.iconfont{
+    font-size: 25px;
+}
 /* 粒子动效背景 */
 #particles-js{
     float: left;
@@ -107,10 +109,18 @@ ul>li{
 #music-text>div{
     text-align: center;
 }
-
+#textpart{
+    width: 100%;
+    height: 80%;
+}
+#music-title{
+    font-size:larger;
+    margin-bottom: 20px;
+}
 #music-progress{
     position: relative;
-    top: 180px;
+    width: 100%;
+    height: 20%;
 }
 #music-progress-time{
     display: flex;

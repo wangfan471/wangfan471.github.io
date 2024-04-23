@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4515230 */
-  src: url('iconfont.woff2?t=1713505737873') format('woff2'),
-       url('iconfont.woff?t=1713505737873') format('woff'),
-       url('iconfont.ttf?t=1713505737873') format('truetype');
+  src: url('iconfont.woff2?t=1713857417303') format('woff2'),
+       url('iconfont.woff?t=1713857417303') format('woff'),
+       url('iconfont.ttf?t=1713857417303') format('truetype');
 }
 
 .iconfont {
@@ -13,57 +13,49 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-shangyishouge:before {
-  content: "\e6bf";
-  margin-right: 2%;
+.icon-huanchong:before {
+  content: "\e613";
 }
 
 .icon-xiayishou:before {
   content: "\e6ae";
-  margin-right: 10%;
 }
 
 .icon-bofang:before {
   content: "\e6af";
-  margin-right: 2%;
 }
 
 .icon-guanbishengyin:before {
   content: "\e6b0";
-  margin-right: 5%;
 }
 
 .icon-tingzhishengyin:before {
   content: "\e6b1";
-  margin-right: 1%;
 }
 
 .icon-zanting:before {
   content: "\e6b2";
-  margin-right: 2%;
 }
 
 .icon-zhongdengyinliang:before {
   content: "\e6b3";
-  margin-right: 1%;
 }
 
 .icon-zuidayinliang:before {
   content: "\e6b4";
-  margin-right: 1%;
 }
 
 .icon-yinliang:before {
   content: "\e6b5";
-  margin-right: 1%;
 }
 
 .icon-xiazaibendi:before {
   content: "\e6bc";
-  margin-right: 1%;
 }
 
-
+.icon-shangyishouge:before {
+  content: "\e6bf";
+}
 
 .icon-xunhuanbofang:before {
   content: "\e6c0";

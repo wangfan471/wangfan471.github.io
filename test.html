@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <audio src="./audio/下雨天-南拳妈妈.MP3"></audio>
- </script>
-</body>
-</html>
+        const time=0
+        const timerun = setInterval(function(){
+            time+=1;
+            if ( !Boolean($("audio").get(0).currentTime)) {
+                $(this).removeClass('icon-bofang').addClass('icon-huanchong')
+            }else{
+                $(this).removeClass('icon-huanchong').addClass('icon-zanting')
+            }   
+        },100000)
+
+        var timesRun = 0;
+        var interval = setInterval(function(){
+            timesRun += 1;
+            if(timesRun === 60){    
+                clearInterval(interval);    
+            }
+            //do whatever here..
+        }, 1000);
