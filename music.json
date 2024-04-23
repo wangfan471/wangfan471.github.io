@@ -1,16 +1,16 @@
 [
     {
         "name": "下雨天",
-        "url": "../video/下雨天-南拳妈妈.MP3",
+        "url": "./audio/下雨天-南拳妈妈.MP3",
         "singer": "南拳妈妈",
-        "img": "../image/music-img/下雨天-南拳妈妈.jpg",
+        "img": "./image/music-img/下雨天-南拳妈妈.jpg",
         "time": "04:20"
     },
     {
         "name": "呼吸决定",
-        "url": "../video/下雨天-南拳妈妈.MP3",
+        "url": "./audio/呼吸决定-fine乐队.mp3",
         "singer": "fine乐队",
-        "img": "../image/music-img/下雨天-南拳妈妈.jpg",
-        "time": "04:20"
+        "img": "./image/music-img/呼吸决定-fine乐队.webp",
+        "time": "04:06"
     }
 ]

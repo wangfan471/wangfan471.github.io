@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 html,body{
     height: 100%;
@@ -84,26 +85,23 @@ ul>li{
     border-radius:15px 15px 15px 15px;
     box-shadow: 0 10px 20px 0px rgb(197, 166, 140,0.5);
 }
-#music-text{
+.music-text{
     width: 100%;
     height: 100%;
-    display: none;
     display: block;
     
 }
 #music-img{
     width: 100%;
     height: 100%;
-    background-size: 100% 100%;
     display: none;
     /* display: block; */
-    background-image: url(../image/music-img/DM_20240422103032_001.jpg);
+    
 }
-#music-list{
+.music-list{
     width: 100%;
     height: 100%;
     display: none;
-    /* display: block; */
 }
 
 #music-text>div{
@@ -131,7 +129,7 @@ ul>li{
 }
 #music-progress-line{
     height: 100%;
-    width: 50%;
+    width: 0%;
     background-color: #f83ed0;
 }
 

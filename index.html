@@ -30,9 +30,12 @@
     <!--展栏1 -->
     <div id="exhibit1">
         <div id="music">
+            <audio src="" id="myaudio"></audio>
             <div id="music-info">
-                <div id="music-img"></div>
-                <div id="music-text" >
+                <div id="music-img">
+                    <img src="./image/music-img/下雨天-南拳妈妈.jpg" alt="下雨天-南拳妈妈" width="100%" height="100%">
+                </div>
+                <div class="music-text" id="music-text" style="display: block;">
                     <div id="music-title">
                         <h1>下雨天</h1>
                     </div>
@@ -44,15 +47,15 @@
                     </div>
                     <div id="music-progress">
                         <div id="music-progress-time">
-                            <span>00:00</span>
-                            <span>05:39</span>
+                            <span id="starttime">00:00</span>
+                            <span id="endtime">05:39</span>
                         </div>
                         <div id="music-progress-bar">
                             <div id="music-progress-line"></div>
                         </div>
                     </div>
                 </div>
-                <div id="music-list">
+                <div class="music-list" id="music-list" style="display: none;">
                     <div id="music-list-top">
                         <div id="music-list-title">歌曲列表</div>
                         <div id="music-list-back"></div>
@@ -67,13 +70,13 @@
                 </div>
             </div>
             <div id="music-panel">
-                <span class="iconfont icon-shangyishouge" id="icon-shangyishouge"  onclick=""></span>
-                <span class="iconfont icon-bofang" id="icon-bofang"  onclick="bofang()"></span>
-                <span class="iconfont icon-xiayishou" id="icon-xiayishou"  onclick=""></span>
-                <span class="iconfont icon-guanbishengyin" id="icon-guanbishengyin"   onclick=""></span>
-                <span class="iconfont icon-xunhuanbofang" id="icon-xunhuanbofang"  onclick=""></span>
-                <span class="iconfont icon-gedan" id="icon-gedan"  onclick=""></span>
-                <span class="iconfont icon-xiazaibendi" id="icon-xiazaibendi"  onclick=""></span>
+                <span class="iconfont icon-shangyishouge" id="icon-shangyishouge"  ></span>
+                <span class="iconfont icon-bofang" id="icon-bofang" ></span>
+                <span class="iconfont icon-xiayishou" id="icon-xiayishou"  ></span>
+                <span class="iconfont icon-guanbishengyin" id="icon-guanbishengyin"   ></span>
+                <span class="iconfont icon-xunhuanbofang" id="icon-xunhuanbofang"  ></span>
+                <span class="iconfont icon-gedan" id="icon-gedan"  ></span>
+                <span class="iconfont icon-xiazaibendi" id="icon-xiazaibendi"  ></span>
             </div>
         </div>
         <div id="photo"></div>
@@ -131,7 +134,40 @@
             console.log(data);
             $("#music-title").html(data.name)
             $("#music-author").html(data.singer)
+            $("#endtime").html(data.time)
+            $('#music-img img').attr('src',data.img)
+            $('audio').attr('src',data.url)
         }
+        // 给播放按钮绑定点击事件
+        $('.icon-bofang').on("click",function(){
+            console.log(111);
+            console.log($(this).hasClass("icon-bofang"));
+            //修改播放暂停图标
+            if ($(this).hasClass("icon-bofang")) {
+                $(this).removeClass('icon-bofang').addClass('icon-zanting');
+                // 播放音乐
+                $("audio").get(0).play()
+            }else{
+                $(this).removeClass('icon-zanting').addClass('icon-bofang')
+                // 暂停音乐
+                $("audio").get(0).pause()
+            }
+        })
+        // 给歌单按钮绑定点击事件
+        $(".icon-gedan").on("click",function(){
+            console.log(222);
+            console.log($('.music-text').attr('style'));
+            console.log($('.music-text').attr('style') == 'display: block;');
+            if($('.music-text').attr('style') == 'display: block;'){
+                $('.music-text').attr('style','display: none;') 
+                $('.music-list').attr('style','display: block;')
+            }else{
+                $('.music-text').attr('style','display: block;') 
+                $('.music-list').attr('style','display: none;') 
+            }
+        })
+        
+        
 
     </script>
 </body>

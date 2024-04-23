@@ -186,3 +186,18 @@ https://blog.csdn.net/nitongxy/article/details/74906344
 
 #jquery
 https://blog.csdn.net/qq_40976321/article/details/90552297
+$('#id').html(data.value)|抓取id元素并赋值
+$('#music-img img').attr('src',data.img)抓取id并为其中的属性赋值
+
+#CSS 如何防止双击选中文本
+https://geek-docs.com/css/css-ask-answer/943_css_how_to_prevent_selecting_text_on_double_click.html#:~:text=CSS%20%E5%A6%82%E4%BD%95%E9%98%B2%E6%AD%A2%E5%8F%8C%E5%87%BB%E9%80%89%E4%B8%AD%E6%96%87%E6%9C%AC%201%20%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E4%BD%BF%E7%94%A8%20user-select%20%E5%B1%9E%E6%80%A7,2%20%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8%20JavaScript%20%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E4%BA%8B%E4%BB%B6%203%20%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9A%E7%A6%81%E6%AD%A2%E5%8F%8C%E5%87%BB%E4%BA%8B%E4%BB%B6
+CSS 提供了 user-select 属性来控制元素是否可被选中。该属性有以下几个可选值：
+
+auto：默认值，允许选中元素文本。
+none：禁止选中元素文本。
+text：允许选中元素文本。
+
+#HTML5 video/audio监听事件属性及方法
+https://blog.csdn.net/u014717791/article/details/120646209
+https://www.runoob.com/tags/ref-av-dom.html
+https://juejin.cn/post/7195368481766768695
