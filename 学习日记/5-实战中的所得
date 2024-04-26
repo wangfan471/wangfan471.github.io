@@ -204,3 +204,56 @@ https://juejin.cn/post/7195368481766768695
 
 #setInterval设置停止和循环 
 https://blog.csdn.net/chelen_jak/article/details/82899153
+
+# ||
+var currentTime = $("audio").get(0).currentTime || 0;
+没有值就返回0
+
+#条件语句if简写
+if (判断语句){
+  执行语句1
+}else{
+
+}
+判断语句 ? 执行语句1  : 执行语句2
+
+#字符串格式化
+min = 05
+sec = 06
+console.log(`${min}:${sec}`)
+${}代表可替换的对象
+最终输出05:06
+
+#取整
+min = 12.456
+var min = parseInt(time / 60) ; 
+
+#jquery 改css属性
+$("#music-progress-line").css({
+  width:value + '%'
+})
+
+# css 加底部线条
+music-list-form li{
+border-bottom: 1px solid rgb(233, 216, 218);
+}
+
+# jquery each遍历
+https://www.runoob.com/jquery/misc_each.html
+
+
+# jquery 创建标签
+https://blog.csdn.net/qq_27626333/article/details/51927022
+
+# jquery 标签内容清空
+$("#music-list-content").empty
+
+#事件委托
+动态创建的元素只能通过父元素委托赖建立事件
+ $("#music-list-content ").on('click','span',function () {
+            console.log(this);
+        })
+
+# HTML data-* 属性
+https://www.w3school.com.cn/tags/att_global_data.asp
+<span data-index='${index}' >${index + 1} .${item.name} - ${item.singer}</span>

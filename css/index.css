@@ -82,7 +82,7 @@ ul>li{
 
 /* 音乐信息 */
 #music-info{
-    height: 79%;
+    height: 83%;
     width: 100%;
     border-radius:15px 15px 15px 15px;
     box-shadow: 0 10px 20px 0px rgb(197, 166, 140,0.5);
@@ -111,7 +111,7 @@ ul>li{
 }
 #textpart{
     width: 100%;
-    height: 80%;
+    height: 85%;
 }
 #music-title{
     font-size:larger;
@@ -120,7 +120,7 @@ ul>li{
 #music-progress{
     position: relative;
     width: 100%;
-    height: 20%;
+    height: 15%;
 }
 #music-progress-time{
     display: flex;
@@ -147,10 +147,22 @@ ul>li{
     width: 100%;
     height: 15%;
 }
+#music-list-title span{
+    font-size: 25px;
+}
 #music-list-form{
     width: 100%;
-    height: 80%;
+    height: 85%;
     overflow: scroll;
+}
+#music-list-form span{
+    font-size: 15px;
+}
+.current-playlist{
+    color: rgb(255, 255, 255);
+}
+#music-list-form li{
+border-bottom: 1px solid rgb(233, 216, 218);
 }
 #music-list-form::-webkit-scrollbar{
     width: 0;
@@ -164,19 +176,23 @@ ul>li{
 #music-list-form span:hover{
     color: rgb(255, 255, 255);
 }
+
 /* 音乐控制 */
 #music-panel{
     position: relative;
-    height: 13%;
+    width: 100%;
+    height: 15%;
     margin-top: 2%;
     text-align: center;
-    padding-top: 4%;
+    padding-top: 2%;
     background-color: rgb(255, 255, 255,0.3);
     border-radius:15px 15px 15px 15px;
     box-shadow: 0 10px 20px 0px rgb(197, 166, 140,0.5);
 }
 #music-panel span{
     cursor: pointer;
+    position: relative;
+    top: 25%;
 }
 #music-panel span:hover{
     color: rgb(255, 255, 255);

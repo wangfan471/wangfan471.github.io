@@ -12,5 +12,12 @@
         "singer": "fine乐队",
         "img": "./image/music-img/呼吸决定-fine乐队.webp",
         "time": "04:06"
+    },
+    {
+        "name": "Tim Bowman",
+        "url": "./audio/Tim Bowman - 4 Rapture.mp3",
+        "singer": "4 Rapture",
+        "img": "./image/music-img/",
+        "time": "04:47"
     }
 ]

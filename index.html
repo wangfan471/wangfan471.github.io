@@ -38,13 +38,13 @@
                 <div class="music-text" id="music-text" style="display: block;">
                     <div id="textpart">
                         <div id="music-title">
-                            <h1>下雨天</h1>
+                            <p>下雨天</p>
                         </div>
                         <div id="music-author">
                             <p>南拳妈妈</p>
                         </div>
                         <div id="music-lyrics">
-                            <p>下雨天了怎么办我好想你</p>
+                            <p></p>
                         </div>
                     </div>
                     <div id="music-progress">
@@ -59,14 +59,13 @@
                 </div>
                 <div class="music-list" id="music-list" style="display: none;">
                     <div id="music-list-top">
-                        <div id="music-list-title">歌曲列表</div>
-                        <div id="music-list-back"></div>
+                        <div id="music-list-title">
+                            <span>歌曲列表</span>
+                        </div>
                     </div>
                     <div id="music-list-form">
                         <ul id="music-list-content" >
-                            <li>
-                                <span>01. 下雨天 - 南拳妈妈</span>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -75,7 +74,7 @@
                 <span class="iconfont icon-shangyishouge" id="icon-shangyishouge" style="margin-right: 2%;" ></span>
                 <span class="iconfont icon-bofang" id="icon-bofang" style="margin-right: 2%;"></span>
                 <span class="iconfont icon-xiayishou" id="icon-xiayishou" style="margin-right: 10%;" ></span>
-                <span class="iconfont icon-guanbishengyin" id="icon-guanbishengyin"  style="margin-right: 5%;" ></span>
+                <span class="iconfont icon-zhongdengyinliang" id="icon-guanbishengyin"  style="margin-right: 5%;" ></span>
                 <span class="iconfont icon-gedan" id="icon-gedan"  ></span>
             </div>
         </div>
@@ -126,6 +125,7 @@
             success: function(data){
                 musiclist = data
                 render(data[initmusic]);
+                renderMusicList(musiclist)
             },
         })
         // 设置标签对应的内容 对号入座
@@ -136,13 +136,37 @@
             $('#music-img img').attr('src',data.img)
             $('audio').attr('src',data.url)
         }
+        // 给上一首按钮绑定点击事件
+        $('#icon-shangyishouge').on('click',function(){
+            if (initmusic <= 0) {
+                initmusic = musiclist.length-1;
+            }else{
+                initmusic--;
+            }
+            console.log(initmusic);
+            render(musiclist[initmusic])
+            $("audio").get(0).play()
+            $('#icon-bofang').removeClass().addClass('iconfont icon-zanting')
+            renderMusicList(musiclist)
+        })
+        // 给下一首按钮绑定点击事件
+        $('#icon-xiayishou').on('click',function(){
+            if (initmusic < musiclist.length-1) {
+                initmusic += 1;
+            }else{
+                initmusic = 0;
+            }
+            render(musiclist[initmusic])
+            $("audio").get(0).play()
+            $('#icon-bofang').removeClass().addClass('iconfont icon-zanting')
+            renderMusicList(musiclist)
+        })
         // 给播放按钮绑定点击事件
         $('#icon-bofang').on("click",function(){
             //修改播放暂停图标
-            if ($(this).hasClass("icon-bofang")) {
+            if ($("audio").get(0).paused) {
                 // 播放音乐
                 $("audio").get(0).play()
-                console.log(Boolean($("audio").get(0).currentTime));
                 $(this).removeClass().addClass('iconfont icon-huanchong')
                 var timesRun = 0;
                 var interval =setInterval(function(){
@@ -150,22 +174,20 @@
                     if(timesRun === 15){    
                         clearInterval(interval);    
                     }
-                    console.log(timesRun);
                     if (Boolean($("audio").get(0).currentTime)) {
                         clearInterval(interval);
                     }
-                    console.log($("audio").get(0).currentTime);
-                    console.log(Boolean($("audio").get(0).currentTime));
                 }, 1000);
                 $(this).removeClass().addClass('iconfont icon-zanting')
+                renderMusicList(musiclist)
             }else{
                 $(this).removeClass().addClass('iconfont icon-bofang')
                 // 暂停音乐
                 $("audio").get(0).pause()
             }
+                
+
         })
-        
-        
         // 给歌单按钮绑定点击事件
         $(".icon-gedan").on("click",function(){
             if($('.music-text').attr('style') == 'display: block;'){
@@ -175,10 +197,61 @@
                 $('.music-text').attr('style','display: block;') 
                 $('.music-list').attr('style','display: none;') 
             }
+            renderMusicList(musiclist)
+        })
+        // 给静音按钮绑定点击事件
+        $("#icon-guanbishengyin").on("click",function () {
+            if ($(this).hasClass("icon-zhongdengyinliang")) {
+                // 关闭声音
+                $(this).removeClass().addClass('iconfont icon-guanbishengyin')
+                $("audio").get(0).muted = true
+            }else{
+                $(this).removeClass().addClass('iconfont icon-zhongdengyinliang')
+                $("audio").get(0).muted = false
+            }
+        })
+        // 给进度条时间绑定更新事件
+        $("audio").on("timeupdate",function () {
+            // 获取音乐当前时间
+            var currentTime = $("audio").get(0).currentTime || 0;
+            // 获取音乐总时长
+            var duration = $("audio").get(0).duration || 0;
+            // 设置当前时间
+            $("#starttime").html(formatTime(currentTime))
+            // 设置进度条
+            value = (duration - currentTime) / 100
+            $("#music-progress-line").css({
+                width:value + '%'
+            })
+        })
+        function formatTime(time) {
+            // 格式化时间
+            var min = parseInt(time / 60) ; 
+            var sec = parseInt(time % 60);
+            min = min < 10 ? '0'+min : min
+            sec = sec < 10 ? '0'+sec : sec
+            return `${min}:${sec}`
+        }
+        // 歌单遍历
+        function renderMusicList(list) {
+            $("#music-list-content").empty();
+            $.each(list,function (index,item) {
+                var $li = $(`
+                    <li class='${index == initmusic ? 'current-playlist' : ' ' }'>
+                        <span data-index='${index}' >${index + 1} .${item.name} - ${item.singer}</span>
+                    </li>
+                `)
+                console.log(initmusic);
+                $("#music-list-content").append($li)
+            })
+        }
+        // 歌单点击
+        $("#music-list-content ").on('click','span',function () {
+            render(musiclist[$(this).attr('data-index')])
+            console.log(initmusic);
+            $('#icon-bofang').trigger('click')
         })
         
-        
-
     </script>
 </body>
 </html>

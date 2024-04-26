@@ -145,6 +145,10 @@ unll和undefined的区别
 null与undefined都可以表示“没有”,含义非常相似。将一个变量赋值为undefined或null,老实说,语法效果几乎没区别。
 既然含义与用法都差不多,为什么要同时设置两个这样的值,这不是无端增加复杂度,令初学者困扰吗?这与历史原因有关
 
+#取整
+min = 12.456
+var min = parseInt(time / 60) ; 
+
 #运算符之算数运算符
 算数运算符
     加减乘除法运算符
@@ -437,6 +441,12 @@ for(var i=0 ; i<5 ; i++){
     }
     console.log(i);
 }
+#字符串格式化
+min = 05
+sec = 06
+console.log(`${min}:${sec}`)
+${}代表可替换的对象
+最终输出05:06
 
 #字符串
 字符串就是零个或多个排在一起的字符,放在单引号或双引号之中
@@ -1013,7 +1023,7 @@ Element.clientHeight, Element.clientWidth
     Element.clienHeigh: 属性返回一个整数值,表示元素节点的 CSS 高度(单位像素),只对块级元素生效,
     对于行内元素返回0。如果块级元素没有设置 CSS 高度,则返回实际高度
    
-    除了元素本身的高度,它还包括`padding部分,但是不包括border、margin 。
+    除了元素本身的高度,它还包括padding部分,但是不包括border、margin 。
     如果有水平滚动条,还要减去水平滚动条的高度。注意,这个值始终是整数,如果是小数会被四舍五入。
     
     Elemen.clienwidth 属性返回元素节点的 CSS 宽度,同样只对块级元素有效,也是只包括元素本身的宽度和padding ,
